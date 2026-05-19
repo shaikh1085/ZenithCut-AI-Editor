@@ -1,18 +1,21 @@
 module.exports = async function handler(req, res) {
-  // Sirf POST request ko allow karne ke liye
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { image } = req.body;
-    const apiKey = process.env.GEMINI_API_KEY; // Vercel se automatic key uthayega
+    let { image } = req.body;
+    const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
       return res.status(500).json({ error: 'API key Vercel mein missing hai.' });
     }
 
-    // Backend se Google Gemini API ko request sending
+    // AGAR IMAGE MEIN 'data:image/...;base64,' SHURU MEIN HO TO USAY SAF KAREIN
+    if (image.includes(',')) {
+      image = image.split(',')[1];
+    }
+
     const googleResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`, {
       method: 'POST',
       headers: {
