@@ -1,2 +1,6 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/api/remove-background", "destination": "/api/remove-background.js" }
+  ]
+}
