@@ -1,18 +1,18 @@
-export default async function handler(req, res) {
-  // Sirf POST request ko allow karein
+module.exports = async function handler(req, res) {
+  // Sirf POST request ko allow karne ke liye
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
     const { image } = req.body;
-    const apiKey = process.env.GEMINI_API_KEY; // Yeh Vercel se automatic key utha lega
+    const apiKey = process.env.GEMINI_API_KEY; // Vercel se automatic key uthayega
 
     if (!apiKey) {
       return res.status(500).json({ error: 'API key Vercel mein missing hai.' });
     }
 
-    // Yahan se backend secure tarike se Google Gemini API ko request bhejega
+    // Backend se Google Gemini API ko request sending
     const googleResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`, {
       method: 'POST',
       headers: {
@@ -35,6 +35,6 @@ export default async function handler(req, res) {
     return res.status(200).json(data);
 
   } catch (error) {
-    return res.status(500).json({ error: 'Server mein koi masla hai' });
+    return res.status(500).json({ error: 'Server mein koi masla hai', details: error.message });
   }
-}
+};
