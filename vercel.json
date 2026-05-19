@@ -1,11 +1,2 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "api/remove-background.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/remove-background", "dest": "api/remove-background.js" },
-    { "src": "/(.*)", "dest": "/$1" }
-  ]
-}
+  "cleanUrls": true
