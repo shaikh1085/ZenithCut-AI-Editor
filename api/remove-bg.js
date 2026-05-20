@@ -8,7 +8,11 @@ export default async function handler(req, res) {
 
     try {
         const { imageBase64 } = req.body;
+        if (!imageBase64) return res.status(400).json({ error: 'No image provided' });
+
         const imageBuffer = Buffer.from(imageBase64, 'base64');
+
+        console.log("Starting Fetch to HuggingFace..."); // Server Log
 
         const response = await fetch('https://api-inference.huggingface.co/models/briaai/RMBG-1.4', {
             method: 'POST',
@@ -20,7 +24,7 @@ export default async function handler(req, res) {
             body: imageBuffer
         });
 
-        // Yahan se error details capture hogi
+        // Agar response 200 nahi hai, toh details log karein
         if (!response.ok) {
             const errorText = await response.text();
             console.error('--- HUGGING FACE ERROR ---');
@@ -35,7 +39,7 @@ export default async function handler(req, res) {
         return res.status(200).json({ image: `data:image/png;base64,${base64Result}` });
 
     } catch (error) {
-        console.error('--- CODE CRASH ERROR ---', error);
+        console.error('--- CODE CRASH ERROR ---', error.message);
         return res.status(500).json({ error: error.message });
     }
 }
