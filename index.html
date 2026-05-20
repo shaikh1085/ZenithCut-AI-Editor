@@ -1,1487 +1,792 @@
-<!-- NAVIGATION HEADER -->
-<header class="border-b border-gray-800/80 bg-[#0d0d12]/90 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-            <div class="h-11 w-11 rounded-xl bg-gradient-to-tr from-brand-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/20">
-                <i class="fa-solid fa-wand-magic-sparkles animate-pulse"></i>
-            </div>
-            <div>
-                <span class="font-display font-bold text-2xl tracking-tight bg-gradient-to-r from-white via-gray-100 to-purple-400 bg-clip-text text-transparent">ZenithCut</span>
-                <span class="text-xs block text-brand-500 font-semibold tracking-widest uppercase">AI Magic Engine</span>
-            </div>
-        </div>
-        
-        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
-            <a href="#editor-workspace" class="hover:text-white transition-colors">Workspace</a>
-            <a href="#how-it-works" class="hover:text-white transition-colors">How it Works</a>
-            <a href="#features-comparison" class="hover:text-white transition-colors">ZenithCut vs Others</a>
-            <a href="#faq" class="hover:text-white transition-colors">FAQs</a>
-        </nav>
-
-        <div class="flex items-center space-x-4">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 animate-pulse">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5"></span> Live & Free
-            </span>
-            <a href="#editor-workspace" class="shimmer-btn text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-md">
-                Start Editing
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- HERO SECTION -->
-<section class="relative pt-12 pb-8 overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.08),transparent_50%)]"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.08),transparent_50%)]"></div>
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
-            Remove Image Backgrounds <br>
-            <span class="bg-gradient-to-r from-brand-500 via-purple-400 to-pink-500 bg-clip-text text-transparent">In Full HD, 100% Free & Unlimited</span>
-        </h1>
-        <p class="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg mb-8">
-            No subscription, no credits, no limitations. ZenithCut uses secure serverless cloud APIs to cut out subjects and craft stunning commercial graphics instantly.
-        </p>
-    </div>
-</section>
+    <!-- ========================================== -->
+    <!-- ADVANCED SEO OPTIMIZATION TAGS             -->
+    <!-- ========================================== -->
+    <title>Free Background Remover - 100% Automatic & HD | ZenithCut</title>
+    <meta name="description" content="Remove image backgrounds online in seconds. ZenithCut is the best free AI background remover. Create transparent PNGs for e-commerce, portraits, and more. No limits!">
+    <meta name="keywords" content="background remover, free background remover, remove background, transparent background maker, AI background eraser, photo background editor, ZenithCut, remove bg free">
+    <meta name="author" content="ZenithCut AI">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Free AI Background Remover - ZenithCut">
+    <meta property="og:description" content="Remove backgrounds from any image automatically with our free AI tool. Get HD transparent images instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zenithcut-ai-editor.vercel.app">
+    
+    <!-- Schema.org Markup for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ZenithCut Free Background Remover",
+      "url": "https://zenithcut-ai-editor.vercel.app",
+      "description": "Automatically remove image backgrounds using advanced AI. 100% free, no subscriptions required.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "AI Background Removal",
+        "Transparent PNG Export",
+        "Custom AI Background Generation"
+      ]
+    }
+    </script>
+    <!-- ========================================== -->
 
-<!-- MAIN EDITOR WORKSPACE -->
-<section id="editor-workspace" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5' },
+                        dark: { 900: '#0B0F19', 800: '#131B2C', 700: '#1E293B' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B0F19; }
+        ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
         
-        <!-- LEFT COLUMN: THE WORKSPACE CANVAS / PREVIEW -->
-        <div class="lg:col-span-7 bg-[#0d0d12] border border-gray-800/80 rounded-3xl p-6 glow-effect">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center space-x-2">
-                    <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                    <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                    <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-widest ml-2">Interactive Canvas</span>
+        .checkerboard-bg {
+            background-color: #0f172a;
+            background-image: 
+                linear-gradient(45deg, #1e293b 25%, transparent 25%), 
+                linear-gradient(-45deg, #1e293b 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #1e293b 75%), 
+                linear-gradient(-45deg, transparent 75%, #1e293b 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        .shimmer-btn {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #6366f1);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .glow-panel {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans min-h-screen selection:bg-brand-500/30">
+
+    <!-- Navbar -->
+    <header class="border-b border-dark-700 bg-dark-900/90 backdrop-blur-xl sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-400 to-purple-600 flex items-center justify-center shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-sparkles text-white"></i>
                 </div>
-                <div class="flex space-x-2">
-                    <button onclick="resetAllEditor()" class="px-3 py-1.5 rounded-lg text-xs font-medium border border-gray-800 bg-[#121218] text-gray-400 hover:text-white transition" title="Reset Workspace">
-                        <i class="fa-solid fa-arrow-rotate-left mr-1"></i> Reset
-                    </button>
-                </div>
-            </div>
-
-            <!-- DRAG & DROP / UPLOAD CONTEXT -->
-            <div id="upload-zone" class="border-2 border-dashed border-gray-800 hover:border-brand-500/50 rounded-2xl p-10 text-center cursor-pointer transition-all bg-[#0e0e14] duration-300 relative group overflow-hidden">
-                <input type="file" id="image-loader" accept="image/*" class="hidden" />
-                <div class="relative z-10">
-                    <div class="w-20 h-20 bg-brand-500/10 text-brand-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-brand-500/20 transition-all duration-300">
-                        <i class="fa-solid fa-cloud-arrow-up text-3xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-200 group-hover:text-brand-500 transition-colors">Select or Drag your Image here</h3>
-                    <p class="text-sm text-gray-500 mt-2">Supports JPG, PNG, WEBP, or AVIF (Up to 15MB)</p>
-                    
-                    <div class="mt-8">
-                        <span class="text-xs font-semibold text-gray-600 uppercase tracking-wider block mb-3">Or try one of these professional presets:</span>
-                        <div class="grid grid-cols-4 gap-3 max-w-sm mx-auto">
-                            <div onclick="loadPreset('sneaker', event)" class="group/thumb cursor-pointer relative rounded-xl overflow-hidden border border-gray-800 hover:border-brand-500 transition aspect-square">
-                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=150&q=80" alt="Preset Sneaker" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition flex items-center justify-center">
-                                    <i class="fa-solid fa-play text-xs text-white"></i>
-                                </div>
-                            </div>
-                            <div onclick="loadPreset('watch', event)" class="group/thumb cursor-pointer relative rounded-xl overflow-hidden border border-gray-800 hover:border-brand-500 transition aspect-square">
-                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=150&q=80" alt="Preset Watch" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition flex items-center justify-center">
-                                    <i class="fa-solid fa-play text-xs text-white"></i>
-                                </div>
-                            </div>
-                            <div onclick="loadPreset('cat', event)" class="group/thumb cursor-pointer relative rounded-xl overflow-hidden border border-gray-800 hover:border-brand-500 transition aspect-square">
-                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=150&q=80" alt="Preset Cat" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition flex items-center justify-center">
-                                    <i class="fa-solid fa-play text-xs text-white"></i>
-                                </div>
-                            </div>
-                            <div onclick="loadPreset('profile', event)" class="group/thumb cursor-pointer relative rounded-xl overflow-hidden border border-gray-800 hover:border-brand-500 transition aspect-square">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Preset Profile" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/thumb:opacity-100 transition flex items-center justify-center">
-                                    <i class="fa-solid fa-play text-xs text-white"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- DYNAMIC SLIDER CONTEXT (HIDDEN BY DEFAULT UNTIL FILE LOADS) -->
-            <div id="interactive-editor-wrap" class="hidden space-y-6">
-                <!-- Before-After Image Slider Container -->
-                <div class="relative overflow-hidden select-none cursor-ew-resize rounded-2xl border border-gray-800 aspect-video w-full checkerboard-bg" id="slider-container">
-                    <!-- Original Image (Bottom Layer) -->
-                    <img id="slider-original" class="absolute inset-0 w-full h-full object-contain pointer-events-none" src="" alt="Original background image" />
-                    
-                    <!-- Processed Image (Top Layer, Clipped dynamically) -->
-                    <div id="slider-processed-wrap" class="absolute inset-0 w-full h-full pointer-events-none" style="clip-path: inset(0 0 0 50%);">
-                        <!-- We will draw the final canvas render here as a flat dataUrl or image -->
-                        <img id="slider-processed" class="absolute inset-0 w-full h-full object-contain" src="" alt="Processed cutout background image" />
-                    </div>
-                    
-                    <!-- Interactive Split Draggable Handle -->
-                    <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-brand-500 via-purple-500 to-pink-500 cursor-ew-resize flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.6)]" style="left: 50%;">
-                        <div class="w-10 h-10 rounded-full bg-white text-gray-900 flex items-center justify-center shadow-2xl border-2 border-brand-500 font-bold text-xs">
-                            <i class="fa-solid fa-arrows-left-right"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Interactive Bottom Canvas Tools -->
-                <div class="flex flex-wrap items-center justify-between gap-4 bg-[#121218] p-4 rounded-xl border border-gray-800/60 text-sm text-gray-400">
-                    <div class="flex items-center space-x-2">
-                        <span class="inline-block w-2.5 h-2.5 rounded-full bg-brand-500"></span>
-                        <span>Left side shows Original / Right side shows Edited Workspace</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <button onclick="toggleViewOriginal(true)" class="px-3 py-1 bg-gray-800 rounded text-xs text-gray-300 hover:text-white transition">Show Full Original</button>
-                        <button onclick="toggleViewOriginal(false)" class="px-3 py-1 bg-gray-800 rounded text-xs text-gray-300 hover:text-white transition">Show Full Cutout</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- RIGHT COLUMN: THE AI CONTROL CENTER & TOOLBOX -->
-        <div class="lg:col-span-5 flex flex-col space-y-6">
-            
-            <!-- TOP CARD: QUICK STEPS & STATUS -->
-            <div class="bg-[#0d0d12] border border-gray-800/80 rounded-3xl p-6 glow-effect">
-                <h2 class="font-display font-bold text-xl mb-4 flex items-center">
-                    <i class="fa-solid fa-sliders text-brand-500 mr-2.5"></i> Tool Engine Dashboard
-                </h2>
-                
-                <!-- AI Status Indicator -->
-                <div id="dashboard-status" class="bg-[#121218] rounded-2xl p-4 border border-gray-800/80 mb-6 text-center">
-                    <div class="text-sm font-medium text-gray-400">Ready for Magic</div>
-                    <div class="text-xs text-gray-500 mt-1">Select an image to open ZenithCut's creative editing toolkit.</div>
-                </div>
-
-                <!-- Multi-step AI Progress Indicator (Hidden by default) -->
-                <div id="ai-progress-container" class="hidden bg-[#121218] rounded-2xl p-5 border border-purple-500/20 mb-6">
-                    <div class="flex items-center justify-between text-sm mb-3 font-semibold text-purple-300">
-                        <span id="ai-status-step">Analyzing pixels...</span>
-                        <span id="ai-status-percentage">20%</span>
-                    </div>
-                    <div class="w-full bg-gray-800 h-2.5 rounded-full overflow-hidden">
-                        <div id="ai-progress-bar" class="h-full bg-gradient-to-r from-brand-500 to-purple-500 transition-all duration-300" style="width: 20%;"></div>
-                    </div>
-                    <div id="ai-progress-subtext" class="text-xs text-gray-500 mt-2 italic">Uploading image to secure GPU sandbox...</div>
-                </div>
-
-                <!-- TAB INTERACTION HEADERS -->
-                <div class="flex border-b border-gray-800 mb-6 text-sm overflow-x-auto">
-                    <button id="tab-btn-ai" onclick="switchTab('ai')" class="pb-3 px-4 font-bold border-b-2 border-brand-500 text-white transition-all whitespace-nowrap">
-                        <i class="fa-solid fa-wand-sparkles mr-1.5"></i> AI Tools
-                    </button>
-                    <button id="tab-btn-bg" onclick="switchTab('bg')" class="pb-3 px-4 font-semibold border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">
-                        <i class="fa-solid fa-panorama mr-1.5"></i> Custom Backgrounds
-                    </button>
-                    <button id="tab-btn-adjust" onclick="switchTab('adjust')" class="pb-3 px-4 font-semibold border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap">
-                        <i class="fa-solid fa-sliders-h mr-1.5"></i> Adjust & Text
-                    </button>
-                </div>
-
-                <!-- TAB CONTAINER 1: AI TOOLS -->
-                <div id="tab-content-ai" class="space-y-6">
-                    <!-- Automatic BG removal trigger -->
-                    <div>
-                        <label class="block text-sm font-bold text-gray-300 mb-2">Auto AI Magic Cut</label>
-                        <p class="text-xs text-gray-500 mb-3">Reconstructs the object and generates a flawlessly isolated alpha foreground mask.</p>
-                        <button id="btn-remove-bg" onclick="executeAIRemoveBackground()" class="w-full shimmer-btn text-white font-bold py-3.5 px-4 rounded-xl shadow-lg flex items-center justify-center space-x-2 transition hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none">
-                            <i class="fa-solid fa-magic-wand-sparkles text-lg animate-bounce"></i>
-                            <span>Auto-Cut Background (FREE AI)</span>
-                        </button>
-                    </div>
-
-                    <!-- Smart AI Replacer Prompt -->
-                    <div class="border-t border-gray-800 pt-5">
-                        <label class="block text-sm font-bold text-gray-300 mb-2">Smart AI Background Generator</label>
-                        <p class="text-xs text-gray-500 mb-3">Replace the background with a fully synthesized environment generated by ZenithCut AI.</p>
-                        <textarea id="ai-replace-prompt" rows="2" class="w-full bg-[#121218] border border-gray-800 rounded-xl p-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none text-gray-100 placeholder-gray-600" placeholder="A futuristic cyber-punk neon street with high reflection floor..."></textarea>
-                        
-                        <!-- Prompt Quick Presets -->
-                        <div class="mt-2.5">
-                            <span class="text-xs text-gray-500 block mb-2 font-medium">Try Preset Prompts:</span>
-                            <div class="flex flex-wrap gap-1.5">
-                                <button onclick="applyPromptPreset('Minimalist Soft Studio lighting')" class="px-2 py-1 bg-[#121218] hover:bg-[#181824] border border-gray-800 hover:border-gray-700 rounded-lg text-xs text-gray-400 hover:text-white transition">Studio Softlight</button>
-                                <button onclick="applyPromptPreset('A luxury office background with out of focus marble textures')" class="px-2 py-1 bg-[#121218] hover:bg-[#181824] border border-gray-800 hover:border-gray-700 rounded-lg text-xs text-gray-400 hover:text-white transition">Luxury Office</button>
-                                <button onclick="applyPromptPreset('Tropical paradise sunset beach, high dynamic range, soft water blur')" class="px-2 py-1 bg-[#121218] hover:bg-[#181824] border border-gray-800 hover:border-gray-700 rounded-lg text-xs text-gray-400 hover:text-white transition">Tropical Sunset</button>
-                                <button onclick="applyPromptPreset('Abstract colorful geometric gradients 3D rendered')" class="px-2 py-1 bg-[#121218] hover:bg-[#181824] border border-gray-800 hover:border-gray-700 rounded-lg text-xs text-gray-400 hover:text-white transition">3D Abstract</button>
-                            </div>
-                        </div>
-
-                        <button id="btn-replace-bg" onclick="executeAIBackgroundReplace()" class="w-full mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition hover:scale-[1.01] disabled:opacity-50">
-                            <i class="fa-solid fa-wand-magic"></i>
-                            <span>Generate AI Environment</span>
-                        </button>
-                    </div>
-
-                    <!-- Manual Chroma Key Controls (Pro Fine-Tuner) -->
-                    <div class="border-t border-gray-800 pt-5">
-                        <div class="flex items-center justify-between mb-2">
-                            <label class="block text-sm font-bold text-gray-300">Manual Key Color Tuning</label>
-                            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-500">Chroma Engine</span>
-                        </div>
-                        <p class="text-xs text-gray-500 mb-4">Fine-tune the transparency values or pick custom colors to instantly chroma-key transparent pixels.</p>
-                        
-                        <div class="flex items-center space-x-4 mb-4 bg-[#121218] p-3 rounded-xl border border-gray-800/80">
-                            <div class="relative">
-                                <input type="color" id="key-color-input" value="#00FF00" onchange="updateChromaKeyColor(this.value)" class="w-12 h-12 bg-transparent border-0 rounded cursor-pointer" />
-                            </div>
-                            <div class="flex-1">
-                                <div class="text-xs text-gray-400">Target Key Color</div>
-                                <div class="text-sm font-mono font-bold text-gray-200" id="key-color-hex-label">#00FF00</div>
-                            </div>
-                            <button onclick="activateEyeDropper()" class="p-2.5 rounded-xl bg-brand-500/10 hover:bg-brand-500/20 text-brand-500 border border-brand-500/20 transition" title="Use Eyedropper on image">
-                                <i class="fa-solid fa-eye-dropper"></i>
-                            </button>
-                        </div>
-
-                        <!-- Tolerance Slider -->
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between text-xs text-gray-400">
-                                <span>Tolerance (Threshold)</span>
-                                <span id="tolerance-val" class="font-bold text-brand-400">100</span>
-                            </div>
-                            <input type="range" id="tolerance-input" min="5" max="255" value="100" oninput="updateToleranceSlider(this.value)" class="w-full accent-brand-500 bg-gray-800 rounded-lg appearance-none h-1.5" />
-                        </div>
-
-                        <!-- Smoothing Slider -->
-                        <div class="space-y-2 mt-4">
-                            <div class="flex items-center justify-between text-xs text-gray-400">
-                                <span>Smoothing (Edge Feathering)</span>
-                                <span id="smoothness-val" class="font-bold text-brand-400">20</span>
-                            </div>
-                            <input type="range" id="smoothness-input" min="0" max="100" value="20" oninput="updateSmoothnessSlider(this.value)" class="w-full accent-brand-500 bg-gray-800 rounded-lg appearance-none h-1.5" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB CONTAINER 2: CUSTOM BACKGROUNDS -->
-                <div id="tab-content-bg" class="hidden space-y-6">
-                    <!-- BG Selection Toggles -->
-                    <div class="grid grid-cols-2 gap-3 mb-4">
-                        <button onclick="setBackgroundType('transparent')" id="bg-type-trans" class="py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-brand-500 bg-brand-500/10 text-brand-500 flex items-center justify-center space-x-2 transition">
-                            <i class="fa-solid fa-border-none"></i> <span>Transparent</span>
-                        </button>
-                        <button onclick="setBackgroundType('solid')" id="bg-type-solid" class="py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-transparent bg-[#121218] hover:bg-[#1a1a24] text-gray-400 hover:text-gray-200 flex items-center justify-center space-x-2 transition">
-                            <i class="fa-solid fa-palette"></i> <span>Solid Color</span>
-                        </button>
-                        <button onclick="setBackgroundType('gradient')" id="bg-type-grad" class="py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-transparent bg-[#121218] hover:bg-[#1a1a24] text-gray-400 hover:text-gray-200 flex items-center justify-center space-x-2 transition">
-                            <i class="fa-solid fa-fill-drip"></i> <span>Gradient</span>
-                        </button>
-                        <button onclick="setBackgroundType('image')" id="bg-type-img" class="py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-transparent bg-[#121218] hover:bg-[#1a1a24] text-gray-400 hover:text-gray-200 flex items-center justify-center space-x-2 transition">
-                            <i class="fa-solid fa-images"></i> <span>Custom Image</span>
-                        </button>
-                    </div>
-
-                    <!-- Solid Color Picker Palette -->
-                    <div id="solid-color-wrap" class="hidden bg-[#121218] p-4 rounded-2xl border border-gray-800 space-y-4">
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Preset Matte Backdrops</div>
-                        <div class="grid grid-cols-6 gap-2">
-                            <button onclick="setSolidColor('#FFFFFF')" class="w-full aspect-square rounded-lg border border-gray-700 bg-white" title="White"></button>
-                            <button onclick="setSolidColor('#000000')" class="w-full aspect-square rounded-lg border border-gray-700 bg-black" title="Black"></button>
-                            <button onclick="setSolidColor('#F3F4F6')" class="w-full aspect-square rounded-lg border border-gray-700 bg-gray-100" title="Soft Gray"></button>
-                            <button onclick="setSolidColor('#EF4444')" class="w-full aspect-square rounded-lg border border-gray-700 bg-red-500" title="Red"></button>
-                            <button onclick="setSolidColor('#3B82F6')" class="w-full aspect-square rounded-lg border border-gray-700 bg-blue-500" title="Blue"></button>
-                            <button onclick="setSolidColor('#10B981')" class="w-full aspect-square rounded-lg border border-gray-700 bg-emerald-500" title="Green"></button>
-                            <button onclick="setSolidColor('#F59E0B')" class="w-full aspect-square rounded-lg border border-gray-700 bg-amber-500" title="Yellow"></button>
-                            <button onclick="setSolidColor('#EC4899')" class="w-full aspect-square rounded-lg border border-gray-700 bg-pink-500" title="Pink"></button>
-                            <button onclick="setSolidColor('#8B5CF6')" class="w-full aspect-square rounded-lg border border-gray-700 bg-purple-500" title="Purple"></button>
-                            <button onclick="setSolidColor('#FF3C00')" class="w-full aspect-square rounded-lg border border-gray-700 bg-[#FF3C00]" title="Neon Orange"></button>
-                            <button onclick="setSolidColor('#00F5FF')" class="w-full aspect-square rounded-lg border border-gray-700 bg-[#00F5FF]" title="Electric Cyan"></button>
-                            <button onclick="setCustomSolidColorPicker()" class="w-full aspect-square rounded-lg border-2 border-dashed border-gray-700 bg-gradient-to-tr from-brand-500 to-pink-500 flex items-center justify-center text-white" title="Custom Picker">
-                                <i class="fa-solid fa-plus text-xs"></i>
-                            </button>
-                        </div>
-                        <div class="hidden flex items-center space-x-3 mt-3" id="custom-solid-picker-box">
-                            <input type="color" id="bg-solid-color-picker" onchange="setSolidColor(this.value)" class="w-10 h-10 bg-transparent border-0 cursor-pointer" />
-                            <span class="text-xs text-gray-400">Pick any custom hue</span>
-                        </div>
-                    </div>
-
-                    <!-- Gradient Presets -->
-                    <div id="gradient-wrap" class="hidden bg-[#121218] p-4 rounded-2xl border border-gray-800 space-y-4">
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Linear Gradient Backgrounds</div>
-                        <div class="grid grid-cols-2 gap-2.5">
-                            <button onclick="setGradient('#6366f1', '#a855f7')" class="py-4 rounded-xl border border-gray-700 bg-gradient-to-r from-indigo-500 to-purple-500 text-xs text-white font-bold">Sunset Neon</button>
-                            <button onclick="setGradient('#3b82f6', '#10b981')" class="py-4 rounded-xl border border-gray-700 bg-gradient-to-r from-blue-500 to-emerald-500 text-xs text-white font-bold">Breeze Fresh</button>
-                            <button onclick="setGradient('#f43f5e', '#f97316')" class="py-4 rounded-xl border border-gray-700 bg-gradient-to-r from-rose-500 to-orange-500 text-xs text-white font-bold">Volcanic Burn</button>
-                            <button onclick="setGradient('#00c6ff', '#0072ff')" class="py-4 rounded-xl border border-gray-700 bg-gradient-to-r from-cyan-400 to-blue-600 text-xs text-white font-bold">Deep Space</button>
-                            <button onclick="setGradient('#1f1c2c', '#928dab')" class="py-4 rounded-xl border border-gray-700 bg-gradient-to-r from-[#1f1c2c] to-[#928dab] text-xs text-white font-bold">Titanium Matte</button>
-                            <button onclick="setGradient('#833ab4', '#fd1d1d')" class="py-4 rounded-xl border border-gray-700 bg-gradient-to-r from-[#833ab4] to-[#fd1d1d] text-xs text-white font-bold">Insta Royal</button>
-                        </div>
-                    </div>
-
-                    <!-- Custom Background Image Upload -->
-                    <div id="image-wrap" class="hidden bg-[#121218] p-4 rounded-2xl border border-gray-800 space-y-4">
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Upload custom backdrop image</div>
-                        <div class="border border-dashed border-gray-700 hover:border-brand-500 rounded-xl p-4 text-center cursor-pointer bg-[#0e0e14]" onclick="triggerBackgroundUpload()">
-                            <input type="file" id="bg-image-loader" accept="image/*" class="hidden" onchange="loadBackgroundCustomImage(event)" />
-                            <i class="fa-solid fa-file-image text-2xl text-brand-500 mb-2"></i>
-                            <div class="text-xs text-gray-300">Click to upload custom background image</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TAB CONTAINER 3: ADJUST & TEXT -->
-                <div id="tab-content-adjust" class="hidden space-y-6">
-                    <!-- Filters Sliders -->
-                    <div class="space-y-4">
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider">Visual Adjustments</div>
-                        
-                        <!-- Brightness -->
-                        <div class="space-y-1">
-                            <div class="flex items-center justify-between text-xs text-gray-400">
-                                <span>Brightness</span>
-                                <span id="val-brightness">100%</span>
-                            </div>
-                            <input type="range" id="adjust-brightness" min="0" max="200" value="100" oninput="updateAdjustment('brightness', this.value)" class="w-full accent-brand-500 bg-gray-800 rounded-lg appearance-none h-1.5" />
-                        </div>
-
-                        <!-- Contrast -->
-                        <div class="space-y-1">
-                            <div class="flex items-center justify-between text-xs text-gray-400">
-                                <span>Contrast</span>
-                                <span id="val-contrast">100%</span>
-                            </div>
-                            <input type="range" id="adjust-contrast" min="0" max="200" value="100" oninput="updateAdjustment('contrast', this.value)" class="w-full accent-brand-500 bg-gray-800 rounded-lg appearance-none h-1.5" />
-                        </div>
-
-                        <!-- Saturation -->
-                        <div class="space-y-1">
-                            <div class="flex items-center justify-between text-xs text-gray-400">
-                                <span>Saturation</span>
-                                <span id="val-saturation">100%</span>
-                            </div>
-                            <input type="range" id="adjust-saturation" min="0" max="200" value="100" oninput="updateAdjustment('saturation', this.value)" class="w-full accent-brand-500 bg-gray-800 rounded-lg appearance-none h-1.5" />
-                        </div>
-                    </div>
-
-                    <!-- Add Text Overlay Tools -->
-                    <div class="border-t border-gray-800 pt-5 space-y-4">
-                        <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Creative Typography Layer</div>
-                        <input type="text" id="overlay-text-input" placeholder="Type text here..." oninput="updateTextOverlay()" class="w-full bg-[#121218] border border-gray-800 rounded-xl p-3 text-sm focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none text-gray-100 placeholder-gray-600" />
-                        
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="space-y-1">
-                                <label class="text-xs text-gray-400">Text Size (px)</label>
-                                <input type="number" id="overlay-size-input" value="48" onchange="updateTextOverlay()" class="w-full bg-[#121218] border border-gray-800 rounded-lg p-2 text-xs outline-none focus:border-brand-500 text-white" />
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-xs text-gray-400">Text Color</label>
-                                <input type="color" id="overlay-color-input" value="#FFFFFF" onchange="updateTextOverlay()" class="w-full h-8 bg-transparent cursor-pointer rounded-lg border border-gray-800" />
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="space-y-1">
-                                <label class="text-xs text-gray-400">Horizontal Pos</label>
-                                <input type="range" id="overlay-x-pos" min="0" max="100" value="50" oninput="updateTextOverlay()" class="w-full accent-brand-500 bg-gray-800 rounded-lg h-1.5" />
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-xs text-gray-400">Vertical Pos</label>
-                                <input type="range" id="overlay-y-pos" min="0" max="100" value="80" oninput="updateTextOverlay()" class="w-full accent-brand-500 bg-gray-800 rounded-lg h-1.5" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DOWNLOAD CONTAINER FOOTER -->
-                <div class="border-t border-gray-800 pt-6 mt-6 space-y-4">
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="font-bold text-gray-300">Export Settings</span>
-                        <span class="text-xs text-gray-500">Fast Download</span>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-3">
-                        <button onclick="downloadCutoutImage('png')" id="btn-export-png" class="py-3 px-4 rounded-xl font-bold bg-[#121218] hover:bg-[#1a1a24] border border-gray-800 hover:border-brand-500/50 text-gray-200 transition-all flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-file-export text-brand-500"></i>
-                            <span>Export PNG</span>
-                        </button>
-                        <button onclick="downloadCutoutImage('jpg')" id="btn-export-jpg" class="py-3 px-4 rounded-xl font-bold bg-[#121218] hover:bg-[#1a1a24] border border-gray-800 hover:border-brand-500/50 text-gray-200 transition-all flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-file-image text-purple-500"></i>
-                            <span>Export JPG</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- MINI INFO BOX -->
-            <div class="bg-[#09090c] border border-gray-800/60 rounded-2xl p-4 flex items-start space-x-3 text-xs text-gray-500">
-                <i class="fa-solid fa-shield-halved text-brand-500 mt-0.5 text-sm"></i>
                 <div>
-                    <span class="font-bold text-gray-400 block mb-0.5">Absolute Cloud Privacy Shield</span>
-                    Every manual key adjustment, brightness filter, and custom background manipulation is compiled completely secure. No image data is saved on remote storage networks.
+                    <span class="font-display font-bold text-2xl tracking-tight text-white">ZenithCut</span>
+                    <span class="text-[10px] block text-brand-400 font-bold tracking-widest uppercase">AI Engine</span>
                 </div>
             </div>
-
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#editor" class="hover:text-white transition-colors">Workspace</a>
+                <a href="#seo-content" class="hover:text-white transition-colors">How it Works</a>
+                <a href="#seo-content" class="hover:text-white transition-colors">Features</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span> 100% Free
+                </span>
+            </div>
         </div>
+    </header>
 
-    </div>
-</section>
-
-<!-- HIGH QUALITY SEO LANDING CONTENT SECTION -->
-<section class="border-t border-gray-800 bg-[#0d0d12]/40 relative py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-center mb-8 bg-gradient-to-r from-white via-gray-200 to-purple-400 bg-clip-text text-transparent">
-            ZenithCut AI vs Remove.bg - The World's Best Free AI Background Remover & Photo Editor
-        </h2>
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         
-        <!-- SEO Integration in high-quality English -->
-        <div class="prose prose-invert max-w-none text-gray-400 space-y-6 text-sm sm:text-base leading-relaxed">
-            <p>
-                If you are searching for the ultimate <strong>free online background remover</strong> that delivers high-definition (HD) results without charging a dime, <strong>ZenithCut AI</strong> is your perfect choice. Unlike legacy platforms like Remove.bg that lock high-resolution downloads behind paywalls and subscription models, ZenithCut AI offers completely unlimited, high-quality subject isolation directly. No hidden fees, no credits, and no registration required.
+        <!-- Hero Section (SEO Optimized H1) -->
+        <div class="text-center mb-12 max-w-3xl mx-auto">
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
+                Remove Image Backgrounds <br>
+                <span class="bg-gradient-to-r from-brand-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">In Full HD, 100% Free</span>
+            </h1>
+            <p class="text-gray-400 text-base md:text-lg leading-relaxed">
+                No subscriptions, no credits, no limitations. ZenithCut uses secure, state-of-the-art AI to cut out subjects and craft stunning transparent graphics instantly.
             </p>
-            <p>
-                Whether you are an e-commerce entrepreneur looking to polish professional product photos (such as shoes, apparel, and watches), a creator designing custom profile pictures, or a digital marketer crafting social media banners, our <strong>Auto-Cut AI Engine</strong> delivers perfect outlines. Simply upload your image, allow our secure algorithms to separate the subject, and choose from our premium range of solid backdrops, modern linear gradients, or use direct text prompts to generate fully synthesized AI environments.
-            </p>
         </div>
 
-        <!-- COMPARISON SECTION -->
-        <div id="features-comparison" class="my-12 overflow-hidden rounded-2xl border border-gray-800 bg-[#0c0c10] glow-effect">
-            <table class="w-full text-left text-sm">
-                <thead class="bg-gray-800/40 text-xs font-semibold uppercase tracking-wider text-gray-300">
-                    <tr>
-                        <th class="px-6 py-4">Features</th>
-                        <th class="px-6 py-4 text-brand-400 font-bold">ZenithCut AI</th>
-                        <th class="px-6 py-4 text-gray-500">Remove.bg (Standard)</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-800/80 text-gray-400">
-                    <tr>
-                        <td class="px-6 py-4 font-bold text-gray-300">HD Downloads</td>
-                        <td class="px-6 py-4 text-emerald-400"><i class="fa-solid fa-check mr-1"></i> Unlimited Free</td>
-                        <td class="px-6 py-4 text-red-500"><i class="fa-solid fa-xmark mr-1"></i> Requires Paid Credits</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 font-bold text-gray-300">Custom AI Generation</td>
-                        <td class="px-6 py-4 text-emerald-400"><i class="fa-solid fa-check mr-1"></i> Built-in (Unlimited)</td>
-                        <td class="px-6 py-4 text-red-500"><i class="fa-solid fa-xmark mr-1"></i> Not Available</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 font-bold text-gray-300">Pro Chroma Tuning</td>
-                        <td class="px-6 py-4 text-emerald-400"><i class="fa-solid fa-check mr-1"></i> Eyedropper & Sliders</td>
-                        <td class="px-6 py-4 text-red-500"><i class="fa-solid fa-xmark mr-1"></i> No Manual Adjustments</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 font-bold text-gray-300">Typography Engine</td>
-                        <td class="px-6 py-4 text-emerald-400"><i class="fa-solid fa-check mr-1"></i> Add Text Layers</td>
-                        <td class="px-6 py-4 text-red-500"><i class="fa-solid fa-xmark mr-1"></i> Simple text overlays only</td>
-                    </tr>
-                    <tr>
-                        <td class="px-6 py-4 font-bold text-gray-300">Data Privacy</td>
-                        <td class="px-6 py-4 text-emerald-400"><i class="fa-solid fa-shield mr-1"></i> Secure Backend</td>
-                        <td class="px-6 py-4 text-yellow-500"><i class="fa-solid fa-circle-info mr-1"></i> Server uploads necessary</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- STEPS TO WORK SECTION -->
-        <div id="how-it-works" class="my-16 space-y-6">
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-center text-white">How It Works: 4 Simple Steps</h3>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-[#121218] p-5 rounded-2xl border border-gray-800 text-center">
-                    <div class="w-10 h-10 rounded-full bg-brand-500/10 text-brand-500 font-bold flex items-center justify-center mx-auto mb-3">1</div>
-                    <h4 class="font-bold text-white mb-1 text-sm">Upload Photo</h4>
-                    <p class="text-xs text-gray-500">Select or drag an image from your computer or mobile gallery.</p>
-                </div>
-                <div class="bg-[#121218] p-5 rounded-2xl border border-gray-800 text-center">
-                    <div class="w-10 h-10 rounded-full bg-brand-500/10 text-brand-500 font-bold flex items-center justify-center mx-auto mb-3">2</div>
-                    <h4 class="font-bold text-white mb-1 text-sm">AI Background Cut</h4>
-                    <p class="text-xs text-gray-500">Click the Auto-Cut AI button to automatically isolate your subject in seconds.</p>
-                </div>
-                <div class="bg-[#121218] p-5 rounded-2xl border border-gray-800 text-center">
-                    <div class="w-10 h-10 rounded-full bg-brand-500/10 text-brand-500 font-bold flex items-center justify-center mx-auto mb-3">3</div>
-                    <h4 class="font-bold text-white mb-1 text-sm">Customize Backdrop</h4>
-                    <p class="text-xs text-gray-500">Apply vibrant gradients, solid corporate backdrops, or generate custom scenes via AI prompts.</p>
-                </div>
-                <div class="bg-[#121218] p-5 rounded-2xl border border-gray-800 text-center">
-                    <div class="w-10 h-10 rounded-full bg-brand-500/10 text-brand-500 font-bold flex items-center justify-center mx-auto mb-3">4</div>
-                    <h4 class="font-bold text-white mb-1 text-sm">Free Export</h4>
-                    <p class="text-xs text-gray-500">Instantly save your custom design as a high-definition PNG or JPEG file.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- INTERACTIVE FAQ SECTION -->
-        <div id="faq" class="my-12">
-            <h3 class="font-display font-bold text-xl sm:text-2xl text-center text-white mb-8">Frequently Asked Questions (FAQs)</h3>
+        <div id="editor" class="grid grid-cols-1 lg:grid-cols-12 gap-8 scroll-mt-24">
             
-            <div class="space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-[#121218] border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFAQ(1)" class="w-full text-left px-6 py-4 font-bold text-gray-200 flex items-center justify-between hover:text-white transition">
-                        <span>Is there any cost to remove backgrounds on ZenithCut AI?</span>
-                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-xs text-gray-500 transition-transform"></i>
+            <!-- LEFT PANEL: CANVAS & EDITOR -->
+            <div class="lg:col-span-7 bg-dark-800 border border-dark-700 rounded-3xl p-2 sm:p-6 glow-panel">
+                
+                <!-- Upload Zone -->
+                <div id="upload-zone" class="border-2 border-dashed border-dark-700 hover:border-brand-500/50 bg-dark-900/50 rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition-all duration-300 flex flex-col items-center justify-center min-h-[450px]">
+                    <input type="file" id="image-loader" accept="image/jpeg, image/png, image/webp" class="hidden" />
+                    
+                    <div class="w-20 h-20 bg-brand-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cloud-arrow-up text-3xl text-brand-400"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">Select or Drag your Image here</h2>
+                    <p class="text-sm text-gray-500 mb-8">Supports JPG, PNG, or WEBP (Up to 15MB)</p>
+                    
+                    <button class="bg-white text-black px-8 py-3.5 rounded-xl font-bold hover:bg-gray-200 transition-colors shadow-lg text-sm sm:text-base">
+                        Upload Image
                     </button>
-                    <div id="faq-body-1" class="hidden px-6 pb-5 text-sm text-gray-400">
-                        Absolutely not! ZenithCut AI is 100% free and unlimited. You can process and download as many high-definition (HD) images as you like without hidden credits, watermarks, or subscription fees.
+
+                    <div class="mt-12 w-full">
+                        <p class="text-xs font-semibold text-gray-500 uppercase mb-4 tracking-wider">Or try one of these professional presets:</p>
+                        <div class="flex justify-center gap-4">
+                            <!-- Added strong ALT attributes for SEO -->
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=150&q=80" onclick="loadDemo(this.src)" class="w-16 h-16 rounded-xl object-cover cursor-pointer hover:ring-2 ring-brand-500 transition-all shadow-md" alt="Red sneaker shoe for background removal">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&q=80" onclick="loadDemo(this.src)" class="w-16 h-16 rounded-xl object-cover cursor-pointer hover:ring-2 ring-brand-500 transition-all shadow-md" alt="Smart watch product photography">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" onclick="loadDemo(this.src)" class="w-16 h-16 rounded-xl object-cover cursor-pointer hover:ring-2 ring-brand-500 transition-all shadow-md" alt="Portrait model face for transparent background">
+                        </div>
                     </div>
                 </div>
 
-                <!-- FAQ 2 -->
-                <div class="bg-[#121218] border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFAQ(2)" class="w-full text-left px-6 py-4 font-bold text-gray-200 flex items-center justify-between hover:text-white transition">
-                        <span>How does the AI Background Generator synthesize new environments?</span>
-                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-xs text-gray-500 transition-transform"></i>
-                    </button>
-                    <div id="faq-body-2" class="hidden px-6 pb-5 text-sm text-gray-400">
-                        Our engine utilizes advanced generative image AI models. It analyzes the foreground subject's lighting, textures, and edges, and seamlessly blends them with your custom text instructions (prompts) to create a brand-new, studio-quality backdrop.
+                <!-- Interactive Editor View -->
+                <div id="interactive-editor" class="hidden flex flex-col space-y-4">
+                    <div class="flex justify-between items-center mb-2 px-2">
+                        <div class="text-sm font-semibold text-brand-400 flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group"></i> Interactive Canvas
+                        </div>
+                        <button onclick="resetApp()" class="text-xs text-gray-400 hover:text-white flex items-center gap-2 bg-dark-900 px-3 py-2 rounded-lg border border-dark-700 transition">
+                            <i class="fa-solid fa-rotate-left"></i> Reset Workspace
+                        </button>
                     </div>
-                </div>
 
-                <!-- FAQ 3 -->
-                <div class="bg-[#121218] border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFAQ(3)" class="w-full text-left px-6 py-4 font-bold text-gray-200 flex items-center justify-between hover:text-white transition">
-                        <span>Can I add text overlays and filters without removing the background?</span>
-                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-xs text-gray-500 transition-transform"></i>
-                    </button>
-                    <div id="faq-body-3" class="hidden px-6 pb-5 text-sm text-gray-400">
-                        Yes! The adjustment panel lets you control image brightness, contrast, and saturation, and apply professional typography layers over any image—with or without executing the background remover.
+                    <!-- Split Slider Container -->
+                    <div class="relative w-full aspect-square sm:aspect-video rounded-2xl overflow-hidden border border-dark-700 checkerboard-bg group select-none" id="slider-container">
+                        <!-- Original Image -->
+                        <img id="img-original" class="absolute inset-0 w-full h-full object-contain pointer-events-none" src="" alt="Original uploaded image">
+                        
+                        <!-- Processed Image (Clipped) -->
+                        <div id="img-processed-wrap" class="absolute inset-0 w-full h-full pointer-events-none" style="clip-path: inset(0 0 0 50%);">
+                            <img id="img-processed" class="absolute inset-0 w-full h-full object-contain drop-shadow-2xl" src="" alt="Background removed transparent image">
+                        </div>
+                        
+                        <!-- Draggable Slider handle -->
+                        <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-brand-500 cursor-ew-resize flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]" style="left: 50%;">
+                            <div class="w-9 h-9 rounded-full bg-white shadow-xl border-2 border-brand-500 flex items-center justify-center text-brand-600 text-sm">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Loading State Overlay -->
+                        <div id="loading-overlay" class="absolute inset-0 bg-dark-900/80 backdrop-blur-md z-10 flex flex-col items-center justify-center hidden">
+                            <div class="relative w-16 h-16 mb-4">
+                                <div class="absolute inset-0 border-4 border-brand-500/20 rounded-full"></div>
+                                <div class="absolute inset-0 border-4 border-brand-500 rounded-full border-t-transparent animate-spin"></div>
+                            </div>
+                            <p class="text-white font-semibold tracking-wide animate-pulse" id="loading-text">Running AI Engine...</p>
+                        </div>
                     </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="bg-[#121218] border border-gray-800 rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFAQ(4)" class="w-full text-left px-6 py-4 font-bold text-gray-200 flex items-center justify-between hover:text-white transition">
-                        <span>Is my personal data and image history secure?</span>
-                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-xs text-gray-500 transition-transform"></i>
-                    </button>
-                    <div id="faq-body-4" class="hidden px-6 pb-5 text-sm text-gray-400">
-                        Yes, completely. Our workspace operates locally within your web browser (client-side) for manual refinements, custom layers, and composition, meaning your original canvas data remains fully private and secure.
+                    
+                    <div class="text-center text-xs text-gray-500 mt-2">
+                        <i class="fa-solid fa-info-circle mr-1"></i> Drag the slider to compare original and edited image.
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-</section>
+            <!-- RIGHT PANEL: AI TOOLS & SETTINGS -->
+            <div class="lg:col-span-5 flex flex-col space-y-6">
+                
+                <!-- Status Dashboard -->
+                <div class="bg-dark-800 border border-dark-700 rounded-3xl p-6 glow-panel text-center">
+                    <h3 class="font-display font-bold text-white text-lg mb-1 flex justify-center items-center gap-2" id="status-title">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i> System Ready
+                    </h3>
+                    <p class="text-sm text-gray-400" id="status-desc">Select an image to open ZenithCut's creative editing toolkit.</p>
+                </div>
 
-<!-- TOAST MESSAGE NOTIFICATION DOCK -->
-<div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3 pointer-events-none"></div>
+                <!-- Tools Accordion -->
+                <div class="bg-dark-800 border border-dark-700 rounded-3xl overflow-hidden glow-panel">
+                    
+                    <!-- Feature 1: AI Background Cut -->
+                    <div class="border-b border-dark-700 p-6">
+                        <label class="block text-sm font-bold text-white mb-1"><i class="fa-solid fa-wand-magic-sparkles text-brand-400 mr-2"></i>Auto AI Magic Cut</label>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Automatically identifies the main subject and generates a flawlessly isolated alpha foreground mask.</p>
+                        <button id="btn-remove-bg" onclick="removeBackgroundAI()" disabled class="w-full shimmer-btn text-white font-bold py-3.5 px-4 rounded-xl shadow-lg disabled:opacity-50 disabled:grayscale transition-all hover:scale-[1.02] active:scale-95 flex justify-center items-center gap-2">
+                            <i class="fa-solid fa-scissors"></i> Remove Background (FREE)
+                        </button>
+                    </div>
 
-<!-- MAIN FOOTER SECTION -->
-<footer class="border-t border-gray-800 bg-[#07070a] py-12 text-center text-sm text-gray-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-        <div class="flex items-center justify-center space-x-3">
-            <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-brand-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <!-- Feature 2: Custom Backgrounds -->
+                    <div class="border-b border-dark-700 p-6">
+                        <label class="block text-sm font-bold text-white mb-3"><i class="fa-solid fa-palette text-emerald-400 mr-2"></i>Customize Backdrop</label>
+                        
+                        <div class="grid grid-cols-4 gap-3 mb-5">
+                            <button onclick="applySolidBg('transparent')" class="w-full aspect-square rounded-xl border border-dark-700 bg-dark-900 flex items-center justify-center text-gray-500 hover:text-white transition hover:border-gray-500" title="Transparent Background"><i class="fa-solid fa-border-none text-xl"></i></button>
+                            <button onclick="applySolidBg('#ffffff')" class="w-full aspect-square rounded-xl border border-dark-700 bg-white shadow-inner hover:scale-105 transition" title="White Background"></button>
+                            <button onclick="applySolidBg('#000000')" class="w-full aspect-square rounded-xl border border-dark-700 bg-black hover:scale-105 transition" title="Black Background"></button>
+                            <button onclick="applySolidBg('#6366f1')" class="w-full aspect-square rounded-xl border border-dark-700 bg-brand-500 hover:scale-105 transition" title="Brand Indigo"></button>
+                        </div>
+                        
+                        <!-- AI Generative Background -->
+                        <div class="pt-5 border-t border-dark-700">
+                            <label class="block text-xs font-semibold text-gray-300 mb-2">Smart AI Background Generator:</label>
+                            <p class="text-[11px] text-gray-500 mb-3">Describe a scene and let AI seamlessly blend your subject into it.</p>
+                            <textarea id="ai-prompt-input" rows="2" class="w-full bg-dark-900 border border-dark-700 rounded-xl p-3 text-sm text-white focus:border-brand-500 focus:outline-none placeholder-gray-600 transition" placeholder="e.g. A futuristic cyber-punk neon street with high reflections..."></textarea>
+                            <button id="btn-gen-bg" onclick="generateAIBG()" disabled class="w-full mt-3 bg-dark-700 hover:bg-dark-600 text-white font-semibold py-3 px-4 rounded-xl transition disabled:opacity-50 flex justify-center items-center gap-2">
+                                <i class="fa-solid fa-microchip"></i> Generate AI Environment
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Download Export -->
+                    <div class="p-6 bg-dark-900/40">
+                        <button onclick="downloadImage()" id="btn-download" disabled class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white py-4 rounded-xl font-bold transition-all shadow-lg shadow-emerald-500/25 disabled:opacity-50 disabled:shadow-none hover:-translate-y-1">
+                            <i class="fa-solid fa-download text-lg"></i> Download HD Result
+                        </button>
+                    </div>
+
+                </div>
             </div>
-            <span class="font-display font-bold text-lg text-white tracking-tight">ZenithCut AI</span>
         </div>
-        <p>© 2026 ZenithCut AI Magic Engine. Built for Unlimited High-Resolution Background Removal. All Rights Reserved.</p>
-        <div class="flex justify-center space-x-6 text-xs text-gray-400">
-            <a href="#editor-workspace" class="hover:underline">Workspace</a>
-            <a href="#" class="hover:underline">Privacy Policy</a>
-            <a href="#" class="hover:underline">Terms of Service</a>
-            <a href="#" class="hover:underline">Sitemap</a>
+        
+        <!-- SEO RICH TEXT CONTENT SECTION -->
+        <section id="seo-content" class="mt-24 pt-16 border-t border-dark-800">
+            <div class="max-w-4xl mx-auto space-y-12 text-gray-400 leading-relaxed">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">The Best Free Background Remover Tool</h2>
+                    <p class="text-lg">Are you tired of complex photo editing software and expensive subscriptions just to make an image transparent? ZenithCut is your ultimate <strong class="text-gray-200">free background remover</strong> online.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-400"></i> Instant & Automatic</h3>
+                        <p>Our advanced artificial intelligence models detect the primary subject of your photo—whether it's a person, product, car, or animal—and erase the background in under 5 seconds. No manual lasso tools required.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-gem text-brand-400"></i> High Definition Export</h3>
+                        <p>Unlike other platforms that charge you for high-resolution downloads, ZenithCut allows you to <strong class="text-gray-200">remove background from images</strong> and download the full HD transparent PNG entirely for free.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-store text-brand-400"></i> Perfect for E-commerce</h3>
+                        <p>Boost your online sales by presenting your products on a clean, professional white background. ZenithCut's background eraser perfectly preserves intricate details like hair, fur, and delicate product edges.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-brain text-brand-400"></i> AI Generative Backgrounds</h3>
+                        <p>Don't just remove the background; replace it! Use our generative AI text prompt feature to instantly teleport your subject to a tropical beach, a cyberpunk city, or a professional photography studio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-dark-900 border-t border-dark-800 py-10 mt-12 text-center text-gray-500 text-sm">
+        <div class="flex items-center justify-center space-x-2 mb-4">
+            <i class="fa-solid fa-sparkles text-brand-500"></i>
+            <span class="font-display font-bold text-gray-300">ZenithCut AI</span>
         </div>
-    </div>
-</footer>
+        <p>© 2026 ZenithCut Free Background Remover. All rights reserved.</p>
+    </footer>
 
-<!-- COMPREHENSIVE JAVASCRIPT SYSTEM ENGINE -->
-<script>
-    // System variables tracking active edits, images, canvases
-    let originalImage = null;       // Original HTML Image element
-    let greenScreenImage = null;    // Image received from Gemini with solid green background
-    let processedForeground = null; // Canvas storing isolated transparent subject
-    let customBackgroundImage = null; // Uploaded backdrop background image
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3 pointer-events-none"></div>
 
-    // Editor State Engine
-    let activeTab = "ai";
-    let backgroundType = "transparent"; // transparent, solid, gradient, image
-    let solidColorHex = "#FFFFFF";
-    let gradientStartColor = "#6366f1";
-    let gradientEndColor = "#a855f7";
-    let chromaKeyHex = "#00FF00";
-    let chromaTolerance = 100;
-    let chromaSmoothness = 20;
+    <script>
+        // ==========================================
+        // SYSTEM API CONFIGURATION
+        // The execution environment automatically injects the API key here.
+        // DO NOT add manual validation logic for this key.
+        // ==========================================
+        const apiKey = ""; 
 
-    // Image Adjustments
-    let filterBrightness = 100;
-    let filterContrast = 100;
-    let filterSaturation = 100;
+        // State Management variables
+        let originalImgData = null; // Stores original Image object
+        let processedCanvas = null; // Stores isolated subject on transparent canvas
+        let finalCanvas = null;     // Stores final composited view
+        
+        let currentBgType = 'transparent'; // Mode: 'transparent', 'color', 'image'
+        let currentBgColor = '#ffffff';
+        let currentBgImage = null;
 
-    // Typography Overlays
-    let overlayText = "";
-    let overlayFontSize = 48;
-    let overlayColor = "#FFFFFF";
-    let overlayX = 50; // Percentage
-    let overlayY = 80; // Percentage
-
-    // Interactive Split Slider States
-    let isSliderDragging = false;
-    const sliderContainer = document.getElementById('slider-container');
-    const sliderHandle = document.getElementById('slider-handle');
-    const sliderProcessedWrap = document.getElementById('slider-processed-wrap');
-    const sliderOriginalImg = document.getElementById('slider-original');
-    const sliderProcessedImg = document.getElementById('slider-processed');
-
-    // Initialize dragging listener on App start
-    window.onload = function () {
-        // Drag and drop events for file loaders
-        const dragZone = document.getElementById('upload-zone');
+        // DOM Elements mapping
+        const uploadZone = document.getElementById('upload-zone');
         const fileInput = document.getElementById('image-loader');
+        const editorArea = document.getElementById('interactive-editor');
+        const imgOriginal = document.getElementById('img-original');
+        const imgProcessed = document.getElementById('img-processed');
+        const sliderContainer = document.getElementById('slider-container');
+        const sliderHandle = document.getElementById('slider-handle');
+        const sliderWrap = document.getElementById('img-processed-wrap');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const loadingText = document.getElementById('loading-text');
+        const statusTitle = document.getElementById('status-title');
+        const statusDesc = document.getElementById('status-desc');
 
-        dragZone.addEventListener('click', () => fileInput.click());
-        dragZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dragZone.classList.add('border-brand-500', 'bg-brand-500/5');
-        });
-        dragZone.addEventListener('dragleave', () => {
-            dragZone.classList.remove('border-brand-500', 'bg-brand-500/5');
-        });
-        dragZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dragZone.classList.remove('border-brand-500', 'bg-brand-500/5');
-            if (e.dataTransfer.files.length > 0) {
-                processImageFile(e.dataTransfer.files[0]);
-            }
-        });
+        const btnRemoveBg = document.getElementById('btn-remove-bg');
+        const btnGenBg = document.getElementById('btn-gen-bg');
+        const btnDownload = document.getElementById('btn-download');
 
+        // Initial setup for Drag and Drop File Upload
+        uploadZone.addEventListener('click', () => fileInput.click());
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('border-brand-500', 'bg-brand-500/10');
+        });
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('border-brand-500', 'bg-brand-500/10');
+        });
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('border-brand-500', 'bg-brand-500/10');
+            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+        });
         fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                processImageFile(e.target.files[0]);
-            }
+            if (e.target.files.length) handleFile(e.target.files[0]);
         });
 
-        // Initialize Split Slider Handlers
-        sliderContainer.addEventListener('mousedown', (e) => {
-            isSliderDragging = true;
-            updateSliderPosition(e.clientX);
-        });
-        window.addEventListener('mousemove', (e) => {
-            if (!isSliderDragging) return;
-            updateSliderPosition(e.clientX);
-        });
-        window.addEventListener('mouseup', () => {
-            isSliderDragging = false;
-        });
-
-        // Mobile responsive touch events for Split Slider
-        sliderContainer.addEventListener('touchstart', (e) => {
-            isSliderDragging = true;
-            updateSliderPosition(e.touches[0].clientX);
-        });
-        window.addEventListener('touchmove', (e) => {
-            if (!isSliderDragging) return;
-            updateSliderPosition(e.touches[0].clientX);
-        });
-        window.addEventListener('touchend', () => {
-            isSliderDragging = false;
-        });
-
-        // Responsive auto window resize triggers rendering
-        window.addEventListener('resize', () => {
-            if (originalImage) {
-                renderWorkspace();
-            }
-        });
-    };
-
-    // Utility to process uploaded image files
-    function processImageFile(file) {
-        const reader = new FileReader();
-        reader.onload = function (event) {
+        // Demo image preset loading (with anonymous cross-origin for canvas compatibility)
+        function loadDemo(src) {
+            showLoading(true, "Loading preset image...");
             const img = new Image();
-            img.onload = function () {
-                originalImage = img;
-                greenScreenImage = null;
-                processedForeground = null;
-                
-                // Reset custom backgrounds to default transparent
-                backgroundType = "transparent";
-                updateBackgroundButtons();
-                
-                // Show interactive workspace
-                document.getElementById('upload-zone').classList.add('hidden');
-                document.getElementById('interactive-editor-wrap').classList.remove('hidden');
-                
-                // Set slider sources
-                sliderOriginalImg.src = event.target.result;
-                sliderProcessedImg.src = event.target.result;
-                
-                // Reset slide visual offset
-                sliderHandle.style.left = '50%';
-                sliderProcessedWrap.style.clipPath = 'inset(0 0 0 50%)';
-
-                // Update UI status
-                updateDashboardStatus("Image Loaded Successfully!", "Click 'Auto-Cut Background' to run AI-assisted transparency engine.");
-                showToast("Image loaded in workspace!", "success");
-                
-                // Initial rendering
-                renderWorkspace();
+            img.crossOrigin = "Anonymous"; // Crucial for Canvas processing later
+            img.onload = () => {
+                // Convert to blob to simulate file upload flow
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                canvas.toBlob((blob) => {
+                    const file = new File([blob], "demo.jpg", { type: "image/jpeg" });
+                    handleFile(file);
+                    showLoading(false);
+                }, 'image/jpeg');
             };
-            img.src = event.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-
-    // Executes Automatic Background Isolation via Secure Vercel Serverless API
-    async function executeAIRemoveBackground() {
-        if (!originalImage) {
-            showToast("Please upload an image first!", "warning");
-            return;
-        }
-
-        // Setup loading progress state
-        showProgress(true);
-        updateProgressState("Preprocessing Image Data...", "Preparing payload arrays for secure backend delivery.", 15);
-
-        try {
-            // Read image data to convert to base64
-            const tempCanvas = document.createElement('canvas');
-            tempCanvas.width = originalImage.naturalWidth || originalImage.width;
-            tempCanvas.height = originalImage.naturalHeight || originalImage.height;
-            const tempCtx = tempCanvas.getContext('2d');
-            tempCtx.drawImage(originalImage, 0, 0);
-
-            // Convert canvas to pure base64
-            const dataUrl = tempCanvas.toDataURL('image/jpeg', 0.85);
-            const base64Data = dataUrl.split(',')[1];
-
-            updateProgressState("Synthesizing AI Green Screen...", "Connecting securely to Serverless backend function.", 50);
-
-            // Safe Backend fetch
-            const response = await fetch('/api/remove-background', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ image: base64Data })
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || "Serverless backend rejected the request.");
-            }
-
-            updateProgressState("Analyzing AI Chroma key...", "Executing local canvas color extraction.", 85);
-
-            // Secure response string processing
-            let base64ImageText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (!base64ImageText) {
-                throw new Error("No usable output content found in AI payload.");
-            }
-
-            // Clean potential markdown tags from response block
-            if (base64ImageText.includes('```')) {
-                base64ImageText = base64ImageText.replace(/```[a-zA-Z]*\n?/g, '').replace(/```/g, '').trim();
-            }
-            base64ImageText = base64ImageText.replace(/\s/g, ''); // Remove spaces
-
-            // Load processed AI image
-            const greenScreenImg = new Image();
-            greenScreenImg.onload = function () {
-                greenScreenImage = greenScreenImg;
-                chromaKeyHex = "#00FF00"; // Default green key color
-                document.getElementById('key-color-input').value = "#00ff00";
-                document.getElementById('key-color-hex-label').innerText = "#00FF00";
-
-                // Execute Chroma-Key masking logic
-                applyLiveChromaKey();
-                
-                showProgress(false);
-                updateDashboardStatus("Background Removed!", "AI finished isolating foreground. Customize backgrounds using custom palettes.");
-                showToast("AI background cutout compiled successfully!", "success");
+            img.onerror = () => {
+                showToast("Failed to load demo image.", "error");
+                showLoading(false);
             };
-            greenScreenImg.src = `data:image/png;base64,${base64ImageText}`;
-
-        } catch (err) {
-            console.error("AI Error:", err);
-            showProgress(false);
-            showToast(err.message || "Background removal failed. Try again.", "error");
-            updateDashboardStatus("AI Engine Error", "An error occurred during generative synthesis. Check Vercel logs or Gemini key settings.");
-        }
-    }
-
-    // AI Background Replacer using a direct User Prompt (Synthesized directly)
-    async function executeAIBackgroundReplace() {
-        if (!originalImage) {
-            showToast("Please upload an image first!", "warning");
-            return;
+            img.src = src;
         }
 
-        const promptText = document.getElementById('ai-replace-prompt').value.trim();
-        if (!promptText) {
-            showToast("Please write or select a background prompt first!", "warning");
-            return;
-        }
-
-        showProgress(true);
-        updateProgressState("Synthesizing custom backdrop...", "Gemini AI backend is crafting your tailored environment.", 35);
-
-        try {
-            // Prepare original image canvas
-            const tempCanvas = document.createElement('canvas');
-            tempCanvas.width = originalImage.naturalWidth || originalImage.width;
-            tempCanvas.height = originalImage.naturalHeight || originalImage.height;
-            const tempCtx = tempCanvas.getContext('2d');
-            tempCtx.drawImage(originalImage, 0, 0);
-
-            const dataUrl = tempCanvas.toDataURL('image/jpeg', 0.85);
-            const base64Data = dataUrl.split(',')[1];
-
-            updateProgressState("Blending original subject with backdrop...", "Perfecting lights, reflections, and shadow map layouts.", 70);
-
-            // Use the same secure endpoint but pass the replacement instruction prompt
-            const response = await fetch('/api/remove-background', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    image: base64Data,
-                    prompt: promptText
-                })
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.error || "Serverless replacement failed.");
+        // Main Image Handler
+        function handleFile(file) {
+            if (!file.type.startsWith('image/')) {
+                showToast("Please upload a valid image file!", "error");
+                return;
             }
 
-            updateProgressState("Rendering new composite...", "Applying final render assets locally.", 90);
-
-            let base64ImageText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (!base64ImageText) {
-                throw new Error("No image data returned.");
-            }
-
-            if (base64ImageText.includes('```')) {
-                base64ImageText = base64ImageText.replace(/```[a-zA-Z]*\n?/g, '').replace(/```/g, '').trim();
-            }
-            base64ImageText = base64ImageText.replace(/\s/g, '');
-
-            const resultImg = new Image();
-            resultImg.onload = function () {
-                const finalCanvas = document.createElement('canvas');
-                finalCanvas.width = resultImg.naturalWidth || resultImg.width;
-                finalCanvas.height = resultImg.naturalHeight || resultImg.height;
-                const finalCtx = finalCanvas.getContext('2d');
-                finalCtx.drawImage(resultImg, 0, 0);
-                
-                processedForeground = finalCanvas;
-                
-                // Set active backdrop type to transparent to let our integrated scenic background shine!
-                backgroundType = "transparent";
-                updateBackgroundButtons();
-                
-                showProgress(false);
-                updateDashboardStatus("AI Backdrop Generated!", "Enjoy custom scenic highlights. You can write adjustments or download immediately.");
-                showToast("AI background successfully replaced!", "success");
-                
-                renderWorkspace();
-            };
-            resultImg.src = `data:image/png;base64,${base64ImageText}`;
-
-        } catch (err) {
-            console.error("AI Replace BG Error:", err);
-            showProgress(false);
-            showToast("Scenic replacement failed. Check API status.", "error");
-        }
-    }
-
-    // Executes native canvas chroma-key transparency filter
-    function applyLiveChromaKey() {
-        if (!greenScreenImage) return;
-
-        const w = greenScreenImage.naturalWidth || greenScreenImage.width;
-        const h = greenScreenImage.naturalHeight || greenScreenImage.height;
-
-        const tempCanvas = document.createElement('canvas');
-        tempCanvas.width = w;
-        tempCanvas.height = h;
-        const tempCtx = tempCanvas.getContext('2d');
-        tempCtx.drawImage(greenScreenImage, 0, 0);
-
-        const imgData = tempCtx.getImageData(0, 0, w, h);
-        const pixels = imgData.data;
-
-        // Extract hex key color to R, G, B coordinates
-        const kr = parseInt(chromaKeyHex.slice(1, 3), 16);
-        const kg = parseInt(chromaKeyHex.slice(3, 5), 16);
-        const kb = parseInt(chromaKeyHex.slice(5, 7), 16);
-
-        const tol = chromaTolerance;
-        const smooth = chromaSmoothness;
-
-        for (let i = 0; i < pixels.length; i += 4) {
-            const r = pixels[i];
-            const g = pixels[i + 1];
-            const b = pixels[i + 2];
-
-            // Calculate Euclidean distance in color space
-            const distance = Math.sqrt((r - kr) ** 2 + (g - kg) ** 2 + (b - kb) ** 2);
-
-            if (distance < tol) {
-                pixels[i + 3] = 0; // Completely transparent
-            } else if (distance < tol + smooth) {
-                // Linear alpha feather transition
-                const alphaRatio = (distance - tol) / smooth;
-                pixels[i + 3] = Math.min(pixels[i + 3], alphaRatio * 255);
-            }
-        }
-
-        tempCtx.putImageData(imgData, 0, 0);
-        processedForeground = tempCanvas;
-
-        // Update workspace visually
-        renderWorkspace();
-    }
-
-    // Composites backgrounds, isolated subjects, typography, and adjustment filters together
-    function renderWorkspace() {
-        if (!originalImage) return;
-
-        // Use original size dimensions to retain high definitions
-        const baseW = originalImage.naturalWidth || originalImage.width;
-        const baseH = originalImage.naturalHeight || originalImage.height;
-
-        // Setup working workspace canvas
-        const mainCanvas = document.createElement('canvas');
-        mainCanvas.width = baseW;
-        mainCanvas.height = baseH;
-        const ctx = mainCanvas.getContext('2d');
-
-        // 1. Draw composite background backdrops
-        if (backgroundType === "transparent") {
-            ctx.clearRect(0, 0, baseW, baseH);
-        } else if (backgroundType === "solid") {
-            ctx.fillStyle = solidColorHex;
-            ctx.fillRect(0, 0, baseW, baseH);
-        } else if (backgroundType === "gradient") {
-            const grad = ctx.createLinearGradient(0, 0, baseW, baseH);
-            grad.addColorStop(0, gradientStartColor);
-            grad.addColorStop(1, gradientEndColor);
-            ctx.fillStyle = grad;
-            ctx.fillRect(0, 0, baseW, baseH);
-        } else if (backgroundType === "image" && customBackgroundImage) {
-            // Draw cover fit image
-            const bgW = customBackgroundImage.naturalWidth || customBackgroundImage.width;
-            const bgH = customBackgroundImage.naturalHeight || customBackgroundImage.height;
-            const hRatio = baseW / bgW;
-            const vRatio = baseH / bgH;
-            const ratio = Math.max(hRatio, vRatio);
-            const shiftX = (baseW - bgW * ratio) / 2;
-            const shiftY = (baseH - bgH * ratio) / 2;
-            ctx.drawImage(customBackgroundImage, shiftX, shiftY, bgW * ratio, bgH * ratio);
-        }
-
-        // 2. Draw Subject Foreground layer
-        // Set canvas visual adjustments (brightness, contrast, saturation)
-        ctx.filter = `brightness(${filterBrightness}%) contrast(${filterContrast}%) saturate(${filterSaturation}%)`;
-
-        if (processedForeground) {
-            // Isolated subject foreground
-            ctx.drawImage(processedForeground, 0, 0, baseW, baseH);
-        } else {
-            // If AI hasn't been executed, draw full original
-            ctx.drawImage(originalImage, 0, 0, baseW, baseH);
-        }
-
-        // Clear visual filters for text layers
-        ctx.filter = 'none';
-
-        // 3. Draw Typography overlay layer
-        if (overlayText.trim() !== "") {
-            ctx.font = `bold ${overlayFontSize}px 'Space Grotesk', sans-serif`;
-            ctx.fillStyle = overlayColor;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-
-            // Add dark premium drop shadow
-            ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
-            ctx.shadowBlur = 8;
-            ctx.shadowOffsetX = 2;
-            ctx.shadowOffsetY = 4;
-
-            const textX = (overlayX / 100) * baseW;
-            const textY = (overlayY / 100) * baseH;
-
-            ctx.fillText(overlayText, textX, textY);
-
-            // Reset shadow values
-            ctx.shadowColor = 'transparent';
-            ctx.shadowBlur = 0;
-            ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 0;
-        }
-
-        // 4. Update the Slider processed view layer
-        sliderProcessedImg.src = mainCanvas.toDataURL('image/png');
-    }
-
-    // Update live before-after draggable slider horizontal offset
-    function updateSliderPosition(clientX) {
-        const rect = sliderContainer.getBoundingClientRect();
-        let position = ((clientX - rect.left) / rect.width) * 100;
-        position = Math.max(0, Math.min(100, position)); // Constrain boundary 0-100%
-        
-        sliderHandle.style.left = `${position}%`;
-        sliderProcessedWrap.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-    }
-
-    // Action helper toggles full view of either Original or Processed composited workspace
-    function toggleViewOriginal(showOriginal) {
-        if (showOriginal) {
-            sliderHandle.style.left = '100%';
-            sliderProcessedWrap.style.clipPath = 'inset(0 0% 0 0)';
-        } else {
-            sliderHandle.style.left = '0%';
-            sliderProcessedWrap.style.clipPath = 'inset(0 100% 0 0)';
-        }
-    }
-
-    // Dynamic switch for workspace sidebar tabs
-    function switchTab(tabId) {
-        activeTab = tabId;
-        const tabs = ["ai", "bg", "adjust"];
-        tabs.forEach(t => {
-            const btn = document.getElementById(`tab-btn-${t}`);
-            const content = document.getElementById(`tab-content-${t}`);
-            if (t === tabId) {
-                btn.className = "pb-3 px-4 font-bold border-b-2 border-brand-500 text-white transition-all whitespace-nowrap";
-                content.classList.remove('hidden');
-            } else {
-                btn.className = "pb-3 px-4 font-semibold border-b-2 border-transparent text-gray-400 hover:text-white transition-all whitespace-nowrap";
-                content.classList.add('hidden');
-            }
-        });
-    }
-
-    // Loads preset preview cards instantly
-    function loadPreset(presetName, event) {
-        event.stopPropagation();
-        const urls = {
-            sneaker: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
-            watch: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80",
-            cat: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80",
-            profile: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
-        };
-
-        const img = new Image();
-        img.crossOrigin = "anonymous"; // Bypass potential CORS restrictions
-        img.onload = function () {
-            originalImage = img;
-            greenScreenImage = null;
-            processedForeground = null;
-            backgroundType = "transparent";
-            updateBackgroundButtons();
-
-            document.getElementById('upload-zone').classList.add('hidden');
-            document.getElementById('interactive-editor-wrap').classList.remove('hidden');
-
-            sliderOriginalImg.src = urls[presetName];
-            sliderProcessedImg.src = urls[presetName];
-
-            sliderHandle.style.left = '50%';
-            sliderProcessedWrap.style.clipPath = 'inset(0 0 0 50%)';
-
-            updateDashboardStatus(`Loaded Preset: ${presetName.toUpperCase()}`, "Ready. Run Auto-Cut AI background removal trigger.");
-            showToast(`Preset: ${presetName} loaded successfully!`, "info");
-
-            renderWorkspace();
-        };
-        img.src = urls[presetName];
-    }
-
-    // Activates custom backdrop picker configuration
-    function setBackgroundType(type) {
-        backgroundType = type;
-        updateBackgroundButtons();
-        
-        // Toggle corresponding workspace sliders
-        document.getElementById('solid-color-wrap').classList.add('hidden');
-        document.getElementById('gradient-wrap').classList.add('hidden');
-        document.getElementById('image-wrap').classList.add('hidden');
-
-        if (type === "solid") {
-            document.getElementById('solid-color-wrap').classList.remove('hidden');
-        } else if (type === "gradient") {
-            document.getElementById('gradient-wrap').classList.remove('hidden');
-        } else if (type === "image") {
-            document.getElementById('image-wrap').classList.remove('hidden');
-        }
-
-        renderWorkspace();
-        showToast(`Background mode: ${type.toUpperCase()}`, "info");
-    }
-
-    // Visual helper updates styling for active backdrop selectors
-    function updateBackgroundButtons() {
-        const types = ["trans", "solid", "grad", "img"];
-        const mapping = { trans: "transparent", solid: "solid", grad: "gradient", img: "image" };
-        
-        types.forEach(t => {
-            const btn = document.getElementById(`bg-type-${t}`);
-            if (mapping[t] === backgroundType) {
-                btn.className = "py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-brand-500 bg-brand-500/10 text-brand-500 flex items-center justify-center space-x-2 transition";
-            } else {
-                btn.className = "py-2.5 px-3 rounded-xl text-xs font-bold border-2 border-transparent bg-[#121218] hover:bg-[#1a1a24] text-gray-400 hover:text-gray-200 flex items-center justify-center space-x-2 transition";
-            }
-        });
-    }
-
-    // Apply pre-loaded matte backdrops
-    function setSolidColor(hex) {
-        solidColorHex = hex;
-        renderWorkspace();
-        showToast(`Matte color applied: ${hex}`, "info");
-    }
-
-    function setCustomSolidColorPicker() {
-        const box = document.getElementById('custom-solid-picker-box');
-        box.classList.toggle('hidden');
-    }
-
-    // Apply modern gradient background presets
-    function setGradient(startColor, endColor) {
-        gradientStartColor = startColor;
-        gradientEndColor = endColor;
-        renderWorkspace();
-        showToast("Modern gradient backdrop applied!", "info");
-    }
-
-    // Custom local image uploader for backgrounds
-    function triggerBackgroundUpload() {
-        document.getElementById('bg-image-loader').click();
-    }
-
-    function loadBackgroundCustomImage(e) {
-        if (e.target.files.length > 0) {
-            const file = e.target.files[0];
             const reader = new FileReader();
-            reader.onload = function (event) {
+            reader.onload = (e) => {
                 const img = new Image();
-                img.onload = function () {
-                    customBackgroundImage = img;
-                    renderWorkspace();
-                    showToast("Custom background image uploaded!", "success");
+                img.onload = () => {
+                    // Initialize core canvases with original dimensions
+                    originalImgData = img;
+                    processedCanvas = document.createElement('canvas');
+                    processedCanvas.width = img.naturalWidth;
+                    processedCanvas.height = img.naturalHeight;
+                    
+                    // Initially set processed view to just the original image
+                    const ctx = processedCanvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0); 
+
+                    // UI State transitions
+                    uploadZone.classList.add('hidden');
+                    editorArea.classList.remove('hidden');
+                    imgOriginal.src = e.target.result;
+                    
+                    currentBgType = 'transparent'; // Reset state
+                    updateCompositedView();
+                    
+                    // Enable action buttons
+                    btnRemoveBg.disabled = false;
+                    btnGenBg.disabled = false;
+                    
+                    updateStatus(`<i class="fa-solid fa-image text-emerald-400"></i> Image Loaded`, "Click 'Remove Background' to trigger the AI engine.");
+                    showToast("Image loaded into workspace!", "success");
                 };
-                img.src = event.target.result;
+                img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
-    }
 
-    // Launches color eyedropper API (or enables direct canvas pick on failure)
-    async function activateEyeDropper() {
-        if (!window.EyeDropper) {
-            showToast("Directly CLICK on the canvas workspace image to pick target hex color.", "info");
-            enableWorkspaceCanvasPicker(true);
-            return;
-        }
+        // ==========================================
+        // AI API LOGIC (GEMINI)
+        // ==========================================
+        
+        async function callGeminiAPIWithBackoff(payload) {
+            // Using the designated image model for canvas environment
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${apiKey}`;
+            const maxRetries = 5;
+            let delay = 1000;
 
-        const eyedropper = new EyeDropper();
-        try {
-            const result = await eyedropper.open();
-            updateChromaKeyColor(result.sRGBHex);
-            showToast(`Eyedropper target matched: ${result.sRGBHex}`, "success");
-        } catch (err) {
-            console.debug("Eyedropper interface closed.");
-        }
-    }
-
-    // Handles manual canvas color coordinate picking fallback
-    function enableWorkspaceCanvasPicker(enable) {
-        const imgEl = document.getElementById('slider-processed');
-        if (enable) {
-            imgEl.classList.add('cursor-crosshair', 'ring-2', 'ring-brand-500');
-            imgEl.onclick = function (e) {
-                const rect = imgEl.getBoundingClientRect();
-                const clickX = e.clientX - rect.left;
-                const clickY = e.clientY - rect.top;
-
-                // Compute pixel coordinates
-                const c = document.createElement('canvas');
-                c.width = imgEl.naturalWidth || imgEl.width;
-                c.height = imgEl.naturalHeight || imgEl.height;
-                const ctx = c.getContext('2d');
-                ctx.drawImage(imgEl, 0, 0);
-
-                const scaleX = c.width / rect.width;
-                const scaleY = c.height / rect.height;
-
-                const pX = Math.floor(clickX * scaleX);
-                const pY = Math.floor(clickY * scaleY);
-
-                const pData = ctx.getImageData(pX, pY, 1, 1).data;
-                const hex = "#" + ((1 << 24) + (pData[0] << 16) + (pData[1] << 8) + pData[2]).toString(16).slice(1);
-
-                updateChromaKeyColor(hex);
-                showToast(`Canvas Color Picked: ${hex.toUpperCase()}`, "success");
-
-                // Disable click picker after selection
-                enableWorkspaceCanvasPicker(false);
-            };
-        } else {
-            imgEl.classList.remove('cursor-crosshair', 'ring-2', 'ring-brand-500');
-            imgEl.onclick = null;
-        }
-    }
-
-    // Key Color parameters update helper
-    function updateChromaKeyColor(hex) {
-        chromaKeyHex = hex;
-        document.getElementById('key-color-input').value = hex;
-        document.getElementById('key-color-hex-label').innerText = hex.toUpperCase();
-        applyChromaKeyTuning();
-    }
-
-    function updateToleranceSlider(val) {
-        chromaTolerance = parseInt(val);
-        document.getElementById('tolerance-val').innerText = val;
-        applyChromaKeyTuning();
-    }
-
-    function updateSmoothnessSlider(val) {
-        chromaSmoothness = parseInt(val);
-        document.getElementById('smoothness-val').innerText = val;
-        applyChromaKeyTuning();
-    }
-
-    function applyChromaKeyTuning() {
-        if (greenScreenImage) {
-            applyChromaKeyTuningDebounced();
-        }
-    }
-
-    // Basic throttle for performance stability on fast slider dragging
-    let timerKey = null;
-    function applyChromaKeyTuningDebounced() {
-        clearTimeout(timerKey);
-        timerKey = setTimeout(() => {
-            applyLiveChromaKey();
-        }, 30);
-    }
-
-    // Fine-tune image filters adjustments dynamically
-    function updateAdjustment(type, val) {
-        if (type === "brightness") filterBrightness = val;
-        if (type === "contrast") filterContrast = val;
-        if (type === "saturation") filterSaturation = val;
-
-        document.getElementById(`val-${type}`).innerText = `${val}%`;
-        renderWorkspace();
-    }
-
-    // Live text overlay update engine
-    function updateTextOverlay() {
-        overlayText = document.getElementById('overlay-text-input').value;
-        overlayFontSize = document.getElementById('overlay-size-input').value;
-        overlayColor = document.getElementById('overlay-color-input').value;
-        overlayX = document.getElementById('overlay-x-pos').value;
-        overlayY = document.getElementById('overlay-y-pos').value;
-
-        renderWorkspace();
-    }
-
-    // Prompt preset loading helper
-    function applyPromptPreset(prompt) {
-        document.getElementById('ai-replace-prompt').value = prompt;
-        showToast("Preset prompt applied!", "info");
-    }
-
-    // High Quality File Download Generator
-    function downloadCutoutImage(format) {
-        if (!originalImage) {
-            showToast("Please load an image first!", "warning");
-            return;
-        }
-
-        const baseW = originalImage.naturalWidth || originalImage.width;
-        const baseH = originalImage.naturalHeight || originalImage.height;
-
-        // Generate high-resolution target composition canvas
-        const finalCanvas = document.createElement('canvas');
-        finalCanvas.width = baseW;
-        finalCanvas.height = baseH;
-        const finalCtx = finalCanvas.getContext('2d');
-
-        // 1. Compile background
-        if (backgroundType === "solid") {
-            finalCtx.fillStyle = solidColorHex;
-            finalCtx.fillRect(0, 0, baseW, baseH);
-        } else if (backgroundType === "gradient") {
-            const grad = finalCtx.createLinearGradient(0, 0, baseW, baseH);
-            grad.addColorStop(0, gradientStartColor);
-            grad.addColorStop(1, gradientEndColor);
-            finalCtx.fillStyle = grad;
-            finalCtx.fillRect(0, 0, baseW, baseH);
-        } else if (backgroundType === "image" && customBackgroundImage) {
-            const bgW = customBackgroundImage.naturalWidth || customBackgroundImage.width;
-            const bgH = customBackgroundImage.naturalHeight || customBackgroundImage.height;
-            const hRatio = baseW / bgW;
-            const vRatio = baseH / bgH;
-            const ratio = Math.max(hRatio, vRatio);
-            const shiftX = (baseW - bgW * ratio) / 2;
-            const shiftY = (baseH - bgH * ratio) / 2;
-            finalCtx.drawImage(customBackgroundImage, shiftX, shiftY, bgW * ratio, bgH * ratio);
-        } else {
-            // If Transparent JPEG requested, add fallback background (white)
-            if (format === 'jpg') {
-                finalCtx.fillStyle = '#FFFFFF';
-                finalCtx.fillRect(0, 0, baseW, baseH);
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const res = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (res.ok) return await res.json();
+                    
+                    // Handle rate limits and server errors
+                    if (res.status !== 429 && res.status !== 503 && res.status >= 400) {
+                        const errorMsg = await res.text();
+                        throw new Error(`API Error ${res.status}: ${errorMsg}`);
+                    }
+                    
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                } catch (err) {
+                    if (i === maxRetries - 1) throw err;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
             }
         }
 
-        // 2. Compile isolated foreground
-        finalCtx.filter = `brightness(${filterBrightness}%) contrast(${filterContrast}%) saturate(${filterSaturation}%)`;
-        if (processedForeground) {
-            finalCtx.drawImage(processedForeground, 0, 0);
-        } else {
-            finalCtx.drawImage(originalImage, 0, 0);
+        async function removeBackgroundAI() {
+            if(!originalImgData) return;
+            
+            showLoading(true, "Analyzing pixels & erasing background...");
+            updateStatus(`<i class="fa-solid fa-microchip text-brand-400"></i> AI Processing`, "Segmenting main subject and rendering transparency...");
+            
+            try {
+                // Resize image slightly if it's too massive to ensure API doesn't timeout
+                const tempCanvas = document.createElement('canvas');
+                let w = originalImgData.naturalWidth;
+                let h = originalImgData.naturalHeight;
+                const MAX_DIM = 2048;
+                if(w > MAX_DIM || h > MAX_DIM) {
+                    const ratio = Math.min(MAX_DIM/w, MAX_DIM/h);
+                    w *= ratio; h *= ratio;
+                }
+                tempCanvas.width = w; tempCanvas.height = h;
+                const tempCtx = tempCanvas.getContext('2d');
+                tempCtx.drawImage(originalImgData, 0, 0, w, h);
+                
+                // Get Base64 without data type prefix
+                const dataUrl = tempCanvas.toDataURL('image/jpeg', 0.9);
+                const base64Data = dataUrl.split(',')[1];
+                
+                // Prompt engineering to force a solid green screen for accurate extraction
+                const prompt = "Re-create this image exactly but change the entire background to a solid pure neon green color (#00FF00). Keep the central foreground subject exactly as it is, maintaining all textures, lighting, and fine details. Do not add any shadows or gradients on the green background.";
+
+                const payload = {
+                    contents: [{
+                        role: "user",
+                        parts: [
+                            { text: prompt },
+                            { inlineData: { mimeType: "image/jpeg", data: base64Data } }
+                        ]
+                    }],
+                    generationConfig: { responseModalities: ["IMAGE"] }
+                };
+
+                const response = await callGeminiAPIWithBackoff(payload);
+                
+                if (response && response.candidates && response.candidates[0]) {
+                    const inlineData = response.candidates[0].content.parts.find(p => p.inlineData)?.inlineData;
+                    if (inlineData) {
+                        await applyChromaKeyExtraction(`data:${inlineData.mimeType};base64,${inlineData.data}`, w, h);
+                        updateStatus(`<i class="fa-solid fa-check-circle text-emerald-400"></i> Task Complete`, "Background successfully removed. You can now download or customize it.");
+                        showToast("Background erased perfectly!", "success");
+                        btnDownload.disabled = false;
+                    } else {
+                        throw new Error("No image data returned from AI.");
+                    }
+                }
+            } catch (error) {
+                console.error("BG Removal Error:", error);
+                let msg = "An error occurred during processing.";
+                if(error.message.includes("API key not valid")) {
+                    msg = "Environment API key is missing. Cannot process.";
+                }
+                updateStatus(`<i class="fa-solid fa-triangle-exclamation text-red-400"></i> Process Failed`, msg);
+                showToast(msg, "error");
+            } finally {
+                showLoading(false);
+            }
         }
-        finalCtx.filter = 'none';
 
-        // 3. Compile Typography overlay
-        if (overlayText.trim() !== "") {
-            finalCtx.font = `bold ${overlayFontSize}px 'Space Grotesk', sans-serif`;
-            finalCtx.fillStyle = overlayColor;
-            finalCtx.textAlign = 'center';
-            finalCtx.textBaseline = 'middle';
+        async function generateAIBG() {
+            const promptText = document.getElementById('ai-prompt-input').value.trim();
+            if(!promptText) {
+                showToast("Please describe the background you want first!", "warning");
+                return;
+            }
 
-            finalCtx.shadowColor = 'rgba(0, 0, 0, 0.6)';
-            finalCtx.shadowBlur = 8;
-            finalCtx.shadowOffsetX = 2;
-            finalCtx.shadowOffsetY = 4;
+            showLoading(true, "Synthesizing custom environment...");
+            
+            try {
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = originalImgData.naturalWidth;
+                tempCanvas.height = originalImgData.naturalHeight;
+                tempCanvas.getContext('2d').drawImage(originalImgData, 0, 0);
+                const base64Data = tempCanvas.toDataURL('image/jpeg', 0.8).split(',')[1];
+                
+                const aiPrompt = `Replace the background of this image with the following scene: "${promptText}". Keep the central subject perfectly intact, unchanged, and exactly in the same position. Blend the subject into the new environment realistically with appropriate ambient lighting.`;
 
-            const textX = (overlayX / 100) * baseW;
-            const textY = (overlayY / 100) * baseH;
-            finalCtx.fillText(overlayText, textX, textY);
+                const payload = {
+                    contents: [{
+                        role: "user",
+                        parts: [
+                            { text: aiPrompt },
+                            { inlineData: { mimeType: "image/jpeg", data: base64Data } }
+                        ]
+                    }],
+                    generationConfig: { responseModalities: ["IMAGE"] }
+                };
+
+                const response = await callGeminiAPIWithBackoff(payload);
+                
+                if (response && response.candidates && response.candidates[0]) {
+                    const inlineData = response.candidates[0].content.parts.find(p => p.inlineData)?.inlineData;
+                    if (inlineData) {
+                        const newImg = new Image();
+                        newImg.onload = () => {
+                            currentBgType = 'image';
+                            currentBgImage = newImg;
+                            
+                            // Because AI generated the full composite, clear the foreground extraction layer
+                            const ctx = processedCanvas.getContext('2d');
+                            ctx.clearRect(0,0, processedCanvas.width, processedCanvas.height);
+                            
+                            updateCompositedView();
+                            updateStatus(`<i class="fa-solid fa-images text-emerald-400"></i> New Scene Generated`, "Your custom AI background is applied.");
+                            showToast("Custom background generated successfully!", "success");
+                            btnDownload.disabled = false;
+                        };
+                        newImg.src = `data:${inlineData.mimeType};base64,${inlineData.data}`;
+                    }
+                }
+            } catch (error) {
+                console.error("AI BG Error:", error);
+                showToast("Failed to generate background.", "error");
+            } finally {
+                showLoading(false);
+            }
         }
 
-        // 4. Fire download link
-        const mime = format === 'png' ? 'image/png' : 'image/jpeg';
-        const dlLink = document.createElement('a');
-        dlLink.download = `ZenithCut_Render_${Date.now()}.${format}`;
-        dlLink.href = finalCanvas.toDataURL(mime, 0.95);
-        document.body.appendChild(dlLink);
-        dlLink.click();
-        document.body.removeChild(dlLink);
+        // ==========================================
+        // LOCAL IMAGE PROCESSING & UTILS
+        // ==========================================
 
-        showToast(`Full HD ${format.toUpperCase()} export downloaded!`, "success");
-    }
-
-    // Reset Workspace to base defaults
-    function resetAllEditor() {
-        originalImage = null;
-        greenScreenImage = null;
-        processedForeground = null;
-        customBackgroundImage = null;
-
-        document.getElementById('upload-zone').classList.remove('hidden');
-        document.getElementById('interactive-editor-wrap').classList.add('hidden');
-        document.getElementById('image-loader').value = "";
-        document.getElementById('bg-image-loader').value = "";
-        document.getElementById('overlay-text-input').value = "";
-        document.getElementById('ai-replace-prompt').value = "";
-
-        filterBrightness = 100;
-        filterContrast = 100;
-        filterSaturation = 100;
-        overlayText = "";
-
-        updateDashboardStatus("Ready for Magic", "Select an image to open ZenithCut's creative editing toolkit.");
-        showToast("Workspace cleared successfully!", "info");
-    }
-
-    // Modern visual feedback panel update status helper
-    function updateDashboardStatus(title, desc) {
-        const statusBox = document.getElementById('dashboard-status');
-        statusBox.innerHTML = `
-            <div class="text-sm font-semibold text-brand-400">${title}</div>
-            <div class="text-xs text-gray-400 mt-1">${desc}</div>
-        `;
-    }
-
-    // Custom progressive state controller
-    function showProgress(show) {
-        const loader = document.getElementById('ai-progress-container');
-        const dashboardStatus = document.getElementById('dashboard-status');
-        const removeBgBtn = document.getElementById('btn-remove-bg');
-        const replaceBgBtn = document.getElementById('btn-replace-bg');
-
-        if (show) {
-            loader.classList.remove('hidden');
-            dashboardStatus.classList.add('hidden');
-            removeBgBtn.disabled = true;
-            replaceBgBtn.disabled = true;
-        } else {
-            loader.classList.add('hidden');
-            dashboardStatus.classList.remove('hidden');
-            removeBgBtn.disabled = false;
-            replaceBgBtn.disabled = false;
+        // Removes solid green pixels from the AI output to create true transparency
+        function applyChromaKeyExtraction(dataUrl, originalW, originalH) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.onload = () => {
+                    // Match dimensions back to original
+                    processedCanvas.width = originalW;
+                    processedCanvas.height = originalH;
+                    const ctx = processedCanvas.getContext('2d');
+                    
+                    // Draw the AI result stretched back to original aspect ratio
+                    ctx.drawImage(img, 0, 0, originalW, originalH);
+                    
+                    try {
+                        const imgData = ctx.getImageData(0, 0, originalW, originalH);
+                        const data = imgData.data;
+                        
+                        // Strict Chroma Key extraction for Pure Green
+                        for (let i = 0; i < data.length; i += 4) {
+                            const r = data[i];
+                            const g = data[i+1];
+                            const b = data[i+2];
+                            
+                            // Detection criteria for the AI generated green screen
+                            if (g > 140 && r < 120 && b < 120) {
+                                data[i+3] = 0; // Make pixel fully transparent
+                            } else if (g > 100 && r < 90 && b < 90) {
+                                // Anti-aliasing / edge feathering (make semi-transparent)
+                                data[i+3] = data[i+3] * 0.5;
+                            }
+                        }
+                        
+                        ctx.putImageData(imgData, 0, 0);
+                        currentBgType = 'transparent'; // Reset backdrop mode
+                        updateCompositedView();
+                        resolve();
+                    } catch(err) {
+                        reject(err);
+                    }
+                };
+                img.onerror = reject;
+                img.src = dataUrl;
+            });
         }
-    }
 
-    // Updates progress states visually
-    function updateProgressState(stepName, detailName, percentage) {
-        document.getElementById('ai-status-step').innerText = stepName;
-        document.getElementById('ai-progress-subtext').innerText = detailName;
-        document.getElementById('ai-status-percentage').innerText = `${percentage}%`;
-        document.getElementById('ai-progress-bar').style.width = `${percentage}%`;
-    }
+        // Merges Background Settings with the Foreground Subject Canvas
+        function updateCompositedView() {
+            if(!originalImgData) return;
+            
+            const w = originalImgData.naturalWidth;
+            const h = originalImgData.naturalHeight;
+            
+            finalCanvas = document.createElement('canvas');
+            finalCanvas.width = w;
+            finalCanvas.height = h;
+            const ctx = finalCanvas.getContext('2d');
+            
+            // 1. Draw Background Layer
+            if (currentBgType === 'color') {
+                ctx.fillStyle = currentBgColor;
+                ctx.fillRect(0, 0, w, h);
+            } else if (currentBgType === 'image' && currentBgImage) {
+                // Scale generated background to cover the canvas
+                ctx.drawImage(currentBgImage, 0, 0, w, h);
+            }
+            
+            // 2. Draw Subject Foreground Layer
+            if (processedCanvas) {
+                ctx.drawImage(processedCanvas, 0, 0);
+            }
+            
+            // Output to the slider UI
+            imgProcessed.src = finalCanvas.toDataURL('image/png', 1.0);
+        }
 
-    // Fully automated client toast notifications
-    function showToast(message, type = "info") {
-        const container = document.getElementById('toast-container');
-        const toast = document.createElement('div');
+        function applySolidBg(color) {
+            if(!processedCanvas) return;
+            if (color === 'transparent') {
+                currentBgType = 'transparent';
+            } else {
+                currentBgType = 'color';
+                currentBgColor = color;
+            }
+            updateCompositedView();
+            showToast("Backdrop updated", "info");
+        }
+
+        function downloadImage() {
+            if(!finalCanvas) return;
+            
+            const link = document.createElement('a');
+            link.download = `ZenithCut_Transparent_${Date.now()}.png`;
+            link.href = finalCanvas.toDataURL('image/png', 1.0); // Highest quality PNG
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showToast("HD Image download started!", "success");
+        }
+
+        // Helper UI updaters
+        function showLoading(show, text="") {
+            if(show) {
+                loadingOverlay.classList.remove('hidden');
+                loadingText.innerText = text;
+            } else {
+                loadingOverlay.classList.add('hidden');
+            }
+        }
+
+        function updateStatus(titleHTML, desc) {
+            statusTitle.innerHTML = titleHTML;
+            statusDesc.innerText = desc;
+        }
+
+        function resetApp() {
+            uploadZone.classList.remove('hidden');
+            editorArea.classList.add('hidden');
+            fileInput.value = '';
+            originalImgData = null;
+            processedCanvas = null;
+            currentBgType = 'transparent';
+            currentBgImage = null;
+            
+            btnRemoveBg.disabled = true;
+            btnGenBg.disabled = true;
+            btnDownload.disabled = true;
+            
+            // Reset slider position
+            sliderHandle.style.left = '50%';
+            sliderWrap.style.clipPath = 'inset(0 50% 0 0)';
+            
+            updateStatus(`<i class="fa-solid fa-circle-check text-emerald-400"></i> System Ready`, "Select an image to open ZenithCut's creative editing toolkit.");
+        }
+
+        // Interactive Before/After Split Slider Logic
+        let isDragging = false;
+        sliderContainer.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e); });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+            if(!isDragging) return;
+            updateSlider(e);
+        });
         
-        const bgClass = {
-            success: "bg-[#0c1a12] border-emerald-500/30 text-emerald-400",
-            warning: "bg-[#1f160c] border-amber-500/30 text-amber-400",
-            error: "bg-[#1a0c0c] border-red-500/30 text-red-400",
-            info: "bg-[#0d0d12] border-brand-500/30 text-brand-300"
-        }[type];
+        sliderContainer.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0]); });
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', (e) => {
+            if(!isDragging) return;
+            updateSlider(e.touches[0]);
+        });
 
-        const iconClass = {
-            success: "fa-solid fa-circle-check",
-            warning: "fa-solid fa-triangle-exclamation",
-            error: "fa-solid fa-circle-xmark",
-            info: "fa-solid fa-info-circle"
-        }[type];
-
-        toast.className = `p-4 rounded-xl border ${bgClass} shadow-xl flex items-center space-x-3 text-sm pointer-events-auto transition-all duration-300 transform translate-y-2 opacity-0`;
-        toast.innerHTML = `
-            <i class="${iconClass} text-base"></i>
-            <span class="font-medium">${message}</span>
-        `;
-
-        container.appendChild(toast);
-
-        // Animate entry
-        setTimeout(() => {
-            toast.classList.remove('translate-y-2', 'opacity-0');
-        }, 10);
-
-        // Animate exit
-        setTimeout(() => {
-            toast.classList.add('translate-y-2', 'opacity-0');
-            setTimeout(() => {
-                container.removeChild(toast);
-            }, 300);
-        }, 3000);
-    }
-
-    // Responsive interactive accordion FAQ toggles
-    function toggleFAQ(id) {
-        const body = document.getElementById(`faq-body-${id}`);
-        const icon = document.getElementById(`faq-icon-${id}`);
-
-        if (body.classList.contains('hidden')) {
-            body.classList.remove('hidden');
-            icon.classList.add('rotate-180');
-        } else {
-            body.classList.add('hidden');
-            icon.classList.remove('rotate-180');
+        function updateSlider(e) {
+            const rect = sliderContainer.getBoundingClientRect();
+            let pos = ((e.clientX - rect.left) / rect.width) * 100;
+            pos = Math.max(0, Math.min(100, pos));
+            sliderHandle.style.left = `${pos}%`;
+            sliderWrap.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
         }
-    }
-</script>
+
+        // Custom Toast Notifications Factory
+        function showToast(message, type = "info") {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            const styles = {
+                success: "bg-emerald-500/10 border-emerald-500/50 text-emerald-400",
+                error: "bg-red-500/10 border-red-500/50 text-red-400",
+                info: "bg-brand-500/10 border-brand-500/50 text-brand-300",
+                warning: "bg-yellow-500/10 border-yellow-500/50 text-yellow-400"
+            };
+            
+            const icons = {
+                success: "fa-check-circle", error: "fa-xmark-circle", info: "fa-info-circle", warning: "fa-triangle-exclamation"
+            };
+
+            toast.className = `p-4 rounded-xl border backdrop-blur-md ${styles[type]} shadow-xl flex items-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0`;
+            toast.innerHTML = `<i class="fa-solid ${icons[type]} text-lg"></i><span class="font-medium text-sm">${message}</span>`;
+            
+            container.appendChild(toast);
+            
+            // Trigger entry animation
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            });
+            
+            // Trigger exit animation
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
