@@ -1,3 +1,5 @@
+const https = require('https');
+
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     
@@ -8,38 +10,48 @@ export default async function handler(req, res) {
 
     try {
         const { imageBase64 } = req.body;
-        if (!imageBase64) return res.status(400).json({ error: 'No image provided' });
-
         const imageBuffer = Buffer.from(imageBase64, 'base64');
 
-        console.log("Starting Fetch to HuggingFace..."); // Server Log
-
-        const response = await fetch('https://api-inference.huggingface.co/models/briaai/RMBG-1.4', {
+        // DNS error se bachne ke liye options
+        const options = {
+            hostname: 'api-inference.huggingface.co',
+            path: '/models/briaai/RMBG-1.4',
             method: 'POST',
+            family: 4, // <-- Yeh line DNS resolution ko fix karti hai
             headers: {
                 'Authorization': `Bearer ${HF_KEY}`,
                 'Content-Type': 'application/octet-stream',
                 'x-wait-for-model': 'true'
-            },
-            body: imageBuffer
+            }
+        };
+
+        const result = await new Promise((resolve, reject) => {
+            const reqH = https.request(options, (resH) => {
+                let data = [];
+                resH.on('data', chunk => data.push(chunk));
+                resH.on('end', () => {
+                    resolve({
+                        status: resH.statusCode,
+                        body: Buffer.concat(data)
+                    });
+                });
+            });
+
+            reqH.on('error', (err) => reject(err));
+            reqH.write(imageBuffer);
+            reqH.end();
         });
 
-        // Agar response 200 nahi hai, toh details log karein
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('--- HUGGING FACE ERROR ---');
-            console.error('Status:', response.status);
-            console.error('Body:', errorText);
-            return res.status(response.status).json({ error: 'HF Error', details: errorText });
+        if (result.status !== 200) {
+            return res.status(result.status).json({ error: 'HF Error', details: result.body.toString() });
         }
 
-        const arrayBuffer = await response.arrayBuffer();
-        const base64Result = Buffer.from(arrayBuffer).toString('base64');
-        
-        return res.status(200).json({ image: `data:image/png;base64,${base64Result}` });
+        return res.status(200).json({ 
+            image: `data:image/png;base64,${result.body.toString('base64')}` 
+        });
 
     } catch (error) {
-        console.error('--- CODE CRASH ERROR ---', error.message);
+        console.error('CRITICAL DNS/NETWORK ERROR:', error);
         return res.status(500).json({ error: error.message });
     }
 }
