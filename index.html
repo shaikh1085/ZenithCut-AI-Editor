@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========================================== -->
-    <!-- ADVANCED SEO OPTIMIZATION TAGS             -->
-    <!-- ========================================== -->
     <title>Free Background Remover - 100% Automatic & HD | ZenithCut</title>
     <meta name="description" content="Remove image backgrounds online in seconds. ZenithCut is the best free AI background remover. Create transparent PNGs for e-commerce, portraits, and more. No limits!">
     <meta name="keywords" content="background remover, free background remover, remove background, transparent background maker, AI background eraser, photo background editor, ZenithCut, remove bg free">
     <meta name="author" content="ZenithCut AI">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
-    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Free AI Background Remover - ZenithCut">
     <meta property="og:description" content="Remove backgrounds from any image automatically with our free AI tool. Get HD transparent images instantly.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zenithcut-ai-editor.vercel.app">
     
-    <!-- Schema.org Markup for Google Rich Snippets -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,25 +24,13 @@
       "description": "Automatically remove image backgrounds using advanced AI. 100% free, no subscriptions required.",
       "applicationCategory": "MultimediaApplication",
       "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0.00",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "AI Background Removal",
-        "Transparent PNG Export",
-        "Custom AI Background Generation"
-      ]
+      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
+      "featureList": ["AI Background Removal", "Transparent PNG Export", "Custom Background Colors"]
     }
     </script>
-    <!-- ========================================== -->
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -130,7 +113,6 @@
     <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         
-        <!-- Hero Section (SEO Optimized H1) -->
         <div class="text-center mb-12 max-w-3xl mx-auto">
             <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
                 Remove Image Backgrounds <br>
@@ -143,7 +125,7 @@
 
         <div id="editor" class="grid grid-cols-1 lg:grid-cols-12 gap-8 scroll-mt-24">
             
-            <!-- LEFT PANEL: CANVAS & EDITOR -->
+            <!-- LEFT PANEL -->
             <div class="lg:col-span-7 bg-dark-800 border border-dark-700 rounded-3xl p-2 sm:p-6 glow-panel">
                 
                 <!-- Upload Zone -->
@@ -163,7 +145,6 @@
                     <div class="mt-12 w-full">
                         <p class="text-xs font-semibold text-gray-500 uppercase mb-4 tracking-wider">Or try one of these professional presets:</p>
                         <div class="flex justify-center gap-4">
-                            <!-- Added strong ALT attributes for SEO -->
                             <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=150&q=80" onclick="loadDemo(this.src)" class="w-16 h-16 rounded-xl object-cover cursor-pointer hover:ring-2 ring-brand-500 transition-all shadow-md" alt="Red sneaker shoe for background removal">
                             <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=150&q=80" onclick="loadDemo(this.src)" class="w-16 h-16 rounded-xl object-cover cursor-pointer hover:ring-2 ring-brand-500 transition-all shadow-md" alt="Smart watch product photography">
                             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" onclick="loadDemo(this.src)" class="w-16 h-16 rounded-xl object-cover cursor-pointer hover:ring-2 ring-brand-500 transition-all shadow-md" alt="Portrait model face for transparent background">
@@ -184,28 +165,26 @@
 
                     <!-- Split Slider Container -->
                     <div class="relative w-full aspect-square sm:aspect-video rounded-2xl overflow-hidden border border-dark-700 checkerboard-bg group select-none" id="slider-container">
-                        <!-- Original Image -->
                         <img id="img-original" class="absolute inset-0 w-full h-full object-contain pointer-events-none" src="" alt="Original uploaded image">
                         
-                        <!-- Processed Image (Clipped) -->
                         <div id="img-processed-wrap" class="absolute inset-0 w-full h-full pointer-events-none" style="clip-path: inset(0 0 0 50%);">
                             <img id="img-processed" class="absolute inset-0 w-full h-full object-contain drop-shadow-2xl" src="" alt="Background removed transparent image">
                         </div>
                         
-                        <!-- Draggable Slider handle -->
                         <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-brand-500 cursor-ew-resize flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]" style="left: 50%;">
                             <div class="w-9 h-9 rounded-full bg-white shadow-xl border-2 border-brand-500 flex items-center justify-center text-brand-600 text-sm">
                                 <i class="fa-solid fa-arrows-left-right"></i>
                             </div>
                         </div>
 
-                        <!-- Loading State Overlay -->
+                        <!-- Loading Overlay -->
                         <div id="loading-overlay" class="absolute inset-0 bg-dark-900/80 backdrop-blur-md z-10 flex flex-col items-center justify-center hidden">
                             <div class="relative w-16 h-16 mb-4">
                                 <div class="absolute inset-0 border-4 border-brand-500/20 rounded-full"></div>
                                 <div class="absolute inset-0 border-4 border-brand-500 rounded-full border-t-transparent animate-spin"></div>
                             </div>
                             <p class="text-white font-semibold tracking-wide animate-pulse" id="loading-text">Running AI Engine...</p>
+                            <p class="text-gray-400 text-xs mt-2" id="loading-subtext"></p>
                         </div>
                     </div>
                     
@@ -215,7 +194,7 @@
                 </div>
             </div>
 
-            <!-- RIGHT PANEL: AI TOOLS & SETTINGS -->
+            <!-- RIGHT PANEL -->
             <div class="lg:col-span-5 flex flex-col space-y-6">
                 
                 <!-- Status Dashboard -->
@@ -226,13 +205,15 @@
                     <p class="text-sm text-gray-400" id="status-desc">Select an image to open ZenithCut's creative editing toolkit.</p>
                 </div>
 
-                <!-- Tools Accordion -->
+                <!-- Tools -->
                 <div class="bg-dark-800 border border-dark-700 rounded-3xl overflow-hidden glow-panel">
                     
                     <!-- Feature 1: AI Background Cut -->
                     <div class="border-b border-dark-700 p-6">
-                        <label class="block text-sm font-bold text-white mb-1"><i class="fa-solid fa-wand-magic-sparkles text-brand-400 mr-2"></i>Auto AI Magic Cut</label>
-                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Automatically identifies the main subject and generates a flawlessly isolated alpha foreground mask.</p>
+                        <label class="block text-sm font-bold text-white mb-1">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-400 mr-2"></i>Auto AI Magic Cut
+                        </label>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Automatically identifies the main subject using BRIA AI RMBG-1.4 model and removes background with precision.</p>
                         <button id="btn-remove-bg" onclick="removeBackgroundAI()" disabled class="w-full shimmer-btn text-white font-bold py-3.5 px-4 rounded-xl shadow-lg disabled:opacity-50 disabled:grayscale transition-all hover:scale-[1.02] active:scale-95 flex justify-center items-center gap-2">
                             <i class="fa-solid fa-scissors"></i> Remove Background (FREE)
                         </button>
@@ -240,69 +221,72 @@
 
                     <!-- Feature 2: Custom Backgrounds -->
                     <div class="border-b border-dark-700 p-6">
-                        <label class="block text-sm font-bold text-white mb-3"><i class="fa-solid fa-palette text-emerald-400 mr-2"></i>Customize Backdrop</label>
+                        <label class="block text-sm font-bold text-white mb-3">
+                            <i class="fa-solid fa-palette text-emerald-400 mr-2"></i>Customize Backdrop
+                        </label>
                         
-                        <div class="grid grid-cols-4 gap-3 mb-5">
-                            <button onclick="applySolidBg('transparent')" class="w-full aspect-square rounded-xl border border-dark-700 bg-dark-900 flex items-center justify-center text-gray-500 hover:text-white transition hover:border-gray-500" title="Transparent Background"><i class="fa-solid fa-border-none text-xl"></i></button>
-                            <button onclick="applySolidBg('#ffffff')" class="w-full aspect-square rounded-xl border border-dark-700 bg-white shadow-inner hover:scale-105 transition" title="White Background"></button>
-                            <button onclick="applySolidBg('#000000')" class="w-full aspect-square rounded-xl border border-dark-700 bg-black hover:scale-105 transition" title="Black Background"></button>
-                            <button onclick="applySolidBg('#6366f1')" class="w-full aspect-square rounded-xl border border-dark-700 bg-brand-500 hover:scale-105 transition" title="Brand Indigo"></button>
-                        </div>
-                        
-                        <!-- AI Generative Background -->
-                        <div class="pt-5 border-t border-dark-700">
-                            <label class="block text-xs font-semibold text-gray-300 mb-2">Smart AI Background Generator:</label>
-                            <p class="text-[11px] text-gray-500 mb-3">Describe a scene and let AI seamlessly blend your subject into it.</p>
-                            <textarea id="ai-prompt-input" rows="2" class="w-full bg-dark-900 border border-dark-700 rounded-xl p-3 text-sm text-white focus:border-brand-500 focus:outline-none placeholder-gray-600 transition" placeholder="e.g. A futuristic cyber-punk neon street with high reflections..."></textarea>
-                            <button id="btn-gen-bg" onclick="generateAIBG()" disabled class="w-full mt-3 bg-dark-700 hover:bg-dark-600 text-white font-semibold py-3 px-4 rounded-xl transition disabled:opacity-50 flex justify-center items-center gap-2">
-                                <i class="fa-solid fa-microchip"></i> Generate AI Environment
+                        <div class="grid grid-cols-4 gap-3 mb-3">
+                            <button onclick="applySolidBg('transparent')" class="w-full aspect-square rounded-xl border border-dark-700 bg-dark-900 flex items-center justify-center text-gray-500 hover:text-white transition hover:border-gray-500" title="Transparent">
+                                <i class="fa-solid fa-border-none text-xl"></i>
                             </button>
+                            <button onclick="applySolidBg('#ffffff')" class="w-full aspect-square rounded-xl border border-dark-700 bg-white shadow-inner hover:scale-105 transition" title="White"></button>
+                            <button onclick="applySolidBg('#000000')" class="w-full aspect-square rounded-xl border border-dark-700 bg-black hover:scale-105 transition" title="Black"></button>
+                            <button onclick="applySolidBg('#6366f1')" class="w-full aspect-square rounded-xl border border-dark-700 bg-indigo-500 hover:scale-105 transition" title="Indigo"></button>
                         </div>
+
+                        <!-- Extra color options -->
+                        <div class="grid grid-cols-4 gap-3">
+                            <button onclick="applySolidBg('#ef4444')" class="w-full aspect-square rounded-xl border border-dark-700 bg-red-500 hover:scale-105 transition" title="Red"></button>
+                            <button onclick="applySolidBg('#f59e0b')" class="w-full aspect-square rounded-xl border border-dark-700 bg-amber-500 hover:scale-105 transition" title="Amber"></button>
+                            <button onclick="applySolidBg('#10b981')" class="w-full aspect-square rounded-xl border border-dark-700 bg-emerald-500 hover:scale-105 transition" title="Green"></button>
+                            <label class="w-full aspect-square rounded-xl border border-dark-700 bg-dark-900 flex items-center justify-center cursor-pointer hover:border-gray-500 transition" title="Custom Color">
+                                <i class="fa-solid fa-eyedropper text-gray-400 text-sm"></i>
+                                <input type="color" id="custom-color-picker" class="hidden" onchange="applySolidBg(this.value)">
+                            </label>
+                        </div>
+                        <p class="text-[10px] text-gray-600 mt-2 text-center">Last icon = pick any custom color</p>
                     </div>
 
-                    <!-- Feature 3: Download Export -->
+                    <!-- Feature 3: Download -->
                     <div class="p-6 bg-dark-900/40">
                         <button onclick="downloadImage()" id="btn-download" disabled class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white py-4 rounded-xl font-bold transition-all shadow-lg shadow-emerald-500/25 disabled:opacity-50 disabled:shadow-none hover:-translate-y-1">
                             <i class="fa-solid fa-download text-lg"></i> Download HD Result
                         </button>
+                        <p class="text-[10px] text-gray-600 text-center mt-2">Exported as transparent PNG — highest quality</p>
                     </div>
-
                 </div>
             </div>
         </div>
         
-        <!-- SEO RICH TEXT CONTENT SECTION -->
+        <!-- SEO Content -->
         <section id="seo-content" class="mt-24 pt-16 border-t border-dark-800">
             <div class="max-w-4xl mx-auto space-y-12 text-gray-400 leading-relaxed">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">The Best Free Background Remover Tool</h2>
                     <p class="text-lg">Are you tired of complex photo editing software and expensive subscriptions just to make an image transparent? ZenithCut is your ultimate <strong class="text-gray-200">free background remover</strong> online.</p>
                 </div>
-
                 <div class="grid md:grid-cols-2 gap-12">
                     <div>
                         <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-bolt text-brand-400"></i> Instant & Automatic</h3>
-                        <p>Our advanced artificial intelligence models detect the primary subject of your photo—whether it's a person, product, car, or animal—and erase the background in under 5 seconds. No manual lasso tools required.</p>
+                        <p>Our advanced BRIA AI RMBG-1.4 model detects the primary subject of your photo—whether it's a person, product, car, or animal—and erases the background in seconds. No manual tools required.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-gem text-brand-400"></i> High Definition Export</h3>
-                        <p>Unlike other platforms that charge you for high-resolution downloads, ZenithCut allows you to <strong class="text-gray-200">remove background from images</strong> and download the full HD transparent PNG entirely for free.</p>
+                        <p>Unlike other platforms that charge for high-resolution downloads, ZenithCut allows you to <strong class="text-gray-200">remove background from images</strong> and download the full HD transparent PNG entirely for free.</p>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-store text-brand-400"></i> Perfect for E-commerce</h3>
-                        <p>Boost your online sales by presenting your products on a clean, professional white background. ZenithCut's background eraser perfectly preserves intricate details like hair, fur, and delicate product edges.</p>
+                        <p>Boost your online sales by presenting your products on a clean, professional white background. ZenithCut perfectly preserves intricate details like hair, fur, and delicate product edges.</p>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-brain text-brand-400"></i> AI Generative Backgrounds</h3>
-                        <p>Don't just remove the background; replace it! Use our generative AI text prompt feature to instantly teleport your subject to a tropical beach, a cyberpunk city, or a professional photography studio.</p>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2"><i class="fa-solid fa-shield text-brand-400"></i> Private & Secure</h3>
+                        <p>Your images are never stored on our servers. All processing happens in real-time via secure API calls and your image data is discarded immediately after processing.</p>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- Global Footer -->
     <footer class="bg-dark-900 border-t border-dark-800 py-10 mt-12 text-center text-gray-500 text-sm">
         <div class="flex items-center justify-center space-x-2 mb-4">
             <i class="fa-solid fa-sparkles text-brand-500"></i>
@@ -311,27 +295,17 @@
         <p>© 2026 ZenithCut Free Background Remover. All rights reserved.</p>
     </footer>
 
-    <!-- Toast Notifications Container -->
     <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3 pointer-events-none"></div>
 
     <script>
-        // ==========================================
-        // SYSTEM API CONFIGURATION
-        // The execution environment automatically injects the API key here.
-        // DO NOT add manual validation logic for this key.
-        // ==========================================
-        const apiKey = ""; 
-
-        // State Management variables
-        let originalImgData = null; // Stores original Image object
-        let processedCanvas = null; // Stores isolated subject on transparent canvas
-        let finalCanvas = null;     // Stores final composited view
-        
-        let currentBgType = 'transparent'; // Mode: 'transparent', 'color', 'image'
+        // State
+        let originalImgData = null;
+        let processedCanvas = null;
+        let finalCanvas = null;
+        let currentBgType = 'transparent';
         let currentBgColor = '#ffffff';
-        let currentBgImage = null;
 
-        // DOM Elements mapping
+        // DOM
         const uploadZone = document.getElementById('upload-zone');
         const fileInput = document.getElementById('image-loader');
         const editorArea = document.getElementById('interactive-editor');
@@ -342,14 +316,13 @@
         const sliderWrap = document.getElementById('img-processed-wrap');
         const loadingOverlay = document.getElementById('loading-overlay');
         const loadingText = document.getElementById('loading-text');
+        const loadingSubtext = document.getElementById('loading-subtext');
         const statusTitle = document.getElementById('status-title');
         const statusDesc = document.getElementById('status-desc');
-
         const btnRemoveBg = document.getElementById('btn-remove-bg');
-        const btnGenBg = document.getElementById('btn-gen-bg');
         const btnDownload = document.getElementById('btn-download');
 
-        // Initial setup for Drag and Drop File Upload
+        // Upload handlers
         uploadZone.addEventListener('click', () => fileInput.click());
         uploadZone.addEventListener('dragover', (e) => {
             e.preventDefault();
@@ -367,64 +340,47 @@
             if (e.target.files.length) handleFile(e.target.files[0]);
         });
 
-        // Demo image preset loading (with anonymous cross-origin for canvas compatibility)
         function loadDemo(src) {
             showLoading(true, "Loading preset image...");
             const img = new Image();
-            img.crossOrigin = "Anonymous"; // Crucial for Canvas processing later
+            img.crossOrigin = "Anonymous";
             img.onload = () => {
-                // Convert to blob to simulate file upload flow
                 const canvas = document.createElement('canvas');
                 canvas.width = img.width;
                 canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
+                canvas.getContext('2d').drawImage(img, 0, 0);
                 canvas.toBlob((blob) => {
                     const file = new File([blob], "demo.jpg", { type: "image/jpeg" });
                     handleFile(file);
                     showLoading(false);
                 }, 'image/jpeg');
             };
-            img.onerror = () => {
-                showToast("Failed to load demo image.", "error");
-                showLoading(false);
-            };
+            img.onerror = () => { showToast("Failed to load demo image.", "error"); showLoading(false); };
             img.src = src;
         }
 
-        // Main Image Handler
         function handleFile(file) {
             if (!file.type.startsWith('image/')) {
                 showToast("Please upload a valid image file!", "error");
                 return;
             }
-
             const reader = new FileReader();
             reader.onload = (e) => {
                 const img = new Image();
                 img.onload = () => {
-                    // Initialize core canvases with original dimensions
                     originalImgData = img;
                     processedCanvas = document.createElement('canvas');
                     processedCanvas.width = img.naturalWidth;
                     processedCanvas.height = img.naturalHeight;
-                    
-                    // Initially set processed view to just the original image
-                    const ctx = processedCanvas.getContext('2d');
-                    ctx.drawImage(img, 0, 0); 
+                    processedCanvas.getContext('2d').drawImage(img, 0, 0);
 
-                    // UI State transitions
                     uploadZone.classList.add('hidden');
                     editorArea.classList.remove('hidden');
                     imgOriginal.src = e.target.result;
-                    
-                    currentBgType = 'transparent'; // Reset state
+
+                    currentBgType = 'transparent';
                     updateCompositedView();
-                    
-                    // Enable action buttons
                     btnRemoveBg.disabled = false;
-                    btnGenBg.disabled = false;
-                    
                     updateStatus(`<i class="fa-solid fa-image text-emerald-400"></i> Image Loaded`, "Click 'Remove Background' to trigger the AI engine.");
                     showToast("Image loaded into workspace!", "success");
                 };
@@ -434,245 +390,106 @@
         }
 
         // ==========================================
-        // AI API LOGIC (GEMINI)
+        // MAIN AI: Hugging Face RMBG-1.4
         // ==========================================
-        
-        async function callGeminiAPIWithBackoff(payload) {
-            // Using the designated image model for canvas environment
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${apiKey}`;
-            const maxRetries = 5;
-            let delay = 1000;
-
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const res = await fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    
-                    if (res.ok) return await res.json();
-                    
-                    // Handle rate limits and server errors
-                    if (res.status !== 429 && res.status !== 503 && res.status >= 400) {
-                        const errorMsg = await res.text();
-                        throw new Error(`API Error ${res.status}: ${errorMsg}`);
-                    }
-                    
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2;
-                } catch (err) {
-                    if (i === maxRetries - 1) throw err;
-                    await new Promise(resolve => setTimeout(resolve, delay));
-                    delay *= 2;
-                }
-            }
-        }
-
         async function removeBackgroundAI() {
-            if(!originalImgData) return;
-            
-            showLoading(true, "Analyzing pixels & erasing background...");
-            updateStatus(`<i class="fa-solid fa-microchip text-brand-400"></i> AI Processing`, "Segmenting main subject and rendering transparency...");
-            
+            if (!originalImgData) return;
+
+            showLoading(true, "Sending to AI Engine...", "This may take 20-30 seconds on first run");
+            updateStatus(`<i class="fa-solid fa-microchip text-brand-400"></i> AI Processing`, "Removing background using BRIA RMBG-1.4 model...");
+            btnRemoveBg.disabled = true;
+
             try {
-                // Resize image slightly if it's too massive to ensure API doesn't timeout
+                // Resize if too large
                 const tempCanvas = document.createElement('canvas');
                 let w = originalImgData.naturalWidth;
                 let h = originalImgData.naturalHeight;
-                const MAX_DIM = 2048;
-                if(w > MAX_DIM || h > MAX_DIM) {
-                    const ratio = Math.min(MAX_DIM/w, MAX_DIM/h);
-                    w *= ratio; h *= ratio;
+                const MAX_DIM = 1024;
+                if (w > MAX_DIM || h > MAX_DIM) {
+                    const ratio = Math.min(MAX_DIM / w, MAX_DIM / h);
+                    w = Math.round(w * ratio);
+                    h = Math.round(h * ratio);
                 }
-                tempCanvas.width = w; tempCanvas.height = h;
-                const tempCtx = tempCanvas.getContext('2d');
-                tempCtx.drawImage(originalImgData, 0, 0, w, h);
-                
-                // Get Base64 without data type prefix
+                tempCanvas.width = w;
+                tempCanvas.height = h;
+                tempCanvas.getContext('2d').drawImage(originalImgData, 0, 0, w, h);
+
                 const dataUrl = tempCanvas.toDataURL('image/jpeg', 0.9);
                 const base64Data = dataUrl.split(',')[1];
-                
-                // Prompt engineering to force a solid green screen for accurate extraction
-                const prompt = "Re-create this image exactly but change the entire background to a solid pure neon green color (#00FF00). Keep the central foreground subject exactly as it is, maintaining all textures, lighting, and fine details. Do not add any shadows or gradients on the green background.";
 
-                const payload = {
-                    contents: [{
-                        role: "user",
-                        parts: [
-                            { text: prompt },
-                            { inlineData: { mimeType: "image/jpeg", data: base64Data } }
-                        ]
-                    }],
-                    generationConfig: { responseModalities: ["IMAGE"] }
-                };
+                // Call our Vercel API route (keeps API key safe)
+                let response = await fetch('/api/remove-bg', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ imageBase64: base64Data })
+                });
 
-                const response = await callGeminiAPIWithBackoff(payload);
-                
-                if (response && response.candidates && response.candidates[0]) {
-                    const inlineData = response.candidates[0].content.parts.find(p => p.inlineData)?.inlineData;
-                    if (inlineData) {
-                        await applyChromaKeyExtraction(`data:${inlineData.mimeType};base64,${inlineData.data}`, w, h);
-                        updateStatus(`<i class="fa-solid fa-check-circle text-emerald-400"></i> Task Complete`, "Background successfully removed. You can now download or customize it.");
-                        showToast("Background erased perfectly!", "success");
-                        btnDownload.disabled = false;
-                    } else {
-                        throw new Error("No image data returned from AI.");
-                    }
+                let data = await response.json();
+
+                // Model cold start — retry once after 25 seconds
+                if (response.status === 503 && data.retry) {
+                    showLoading(true, "AI Model warming up...", "Please wait ~25 seconds for first request");
+                    await new Promise(r => setTimeout(r, 25000));
+
+                    response = await fetch('/api/remove-bg', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ imageBase64: base64Data })
+                    });
+                    data = await response.json();
                 }
+
+                if (!response.ok) throw new Error(data.error || 'Unknown error');
+
+                // Draw result to processedCanvas
+                const resultImg = new Image();
+                resultImg.onload = () => {
+                    processedCanvas.width = originalImgData.naturalWidth;
+                    processedCanvas.height = originalImgData.naturalHeight;
+                    const ctx = processedCanvas.getContext('2d');
+                    ctx.clearRect(0, 0, processedCanvas.width, processedCanvas.height);
+                    ctx.drawImage(resultImg, 0, 0, processedCanvas.width, processedCanvas.height);
+                    currentBgType = 'transparent';
+                    updateCompositedView();
+                    btnDownload.disabled = false;
+                    updateStatus(`<i class="fa-solid fa-check-circle text-emerald-400"></i> Task Complete`, "Background removed! Download or choose a custom backdrop.");
+                    showToast("Background erased perfectly!", "success");
+                };
+                resultImg.src = data.image;
+
             } catch (error) {
                 console.error("BG Removal Error:", error);
-                let msg = "An error occurred during processing.";
-                if(error.message.includes("API key not valid")) {
-                    msg = "Environment API key is missing. Cannot process.";
-                }
-                updateStatus(`<i class="fa-solid fa-triangle-exclamation text-red-400"></i> Process Failed`, msg);
-                showToast(msg, "error");
+                updateStatus(`<i class="fa-solid fa-triangle-exclamation text-red-400"></i> Process Failed`, error.message);
+                showToast("Error: " + error.message, "error");
             } finally {
                 showLoading(false);
-            }
-        }
-
-        async function generateAIBG() {
-            const promptText = document.getElementById('ai-prompt-input').value.trim();
-            if(!promptText) {
-                showToast("Please describe the background you want first!", "warning");
-                return;
-            }
-
-            showLoading(true, "Synthesizing custom environment...");
-            
-            try {
-                const tempCanvas = document.createElement('canvas');
-                tempCanvas.width = originalImgData.naturalWidth;
-                tempCanvas.height = originalImgData.naturalHeight;
-                tempCanvas.getContext('2d').drawImage(originalImgData, 0, 0);
-                const base64Data = tempCanvas.toDataURL('image/jpeg', 0.8).split(',')[1];
-                
-                const aiPrompt = `Replace the background of this image with the following scene: "${promptText}". Keep the central subject perfectly intact, unchanged, and exactly in the same position. Blend the subject into the new environment realistically with appropriate ambient lighting.`;
-
-                const payload = {
-                    contents: [{
-                        role: "user",
-                        parts: [
-                            { text: aiPrompt },
-                            { inlineData: { mimeType: "image/jpeg", data: base64Data } }
-                        ]
-                    }],
-                    generationConfig: { responseModalities: ["IMAGE"] }
-                };
-
-                const response = await callGeminiAPIWithBackoff(payload);
-                
-                if (response && response.candidates && response.candidates[0]) {
-                    const inlineData = response.candidates[0].content.parts.find(p => p.inlineData)?.inlineData;
-                    if (inlineData) {
-                        const newImg = new Image();
-                        newImg.onload = () => {
-                            currentBgType = 'image';
-                            currentBgImage = newImg;
-                            
-                            // Because AI generated the full composite, clear the foreground extraction layer
-                            const ctx = processedCanvas.getContext('2d');
-                            ctx.clearRect(0,0, processedCanvas.width, processedCanvas.height);
-                            
-                            updateCompositedView();
-                            updateStatus(`<i class="fa-solid fa-images text-emerald-400"></i> New Scene Generated`, "Your custom AI background is applied.");
-                            showToast("Custom background generated successfully!", "success");
-                            btnDownload.disabled = false;
-                        };
-                        newImg.src = `data:${inlineData.mimeType};base64,${inlineData.data}`;
-                    }
-                }
-            } catch (error) {
-                console.error("AI BG Error:", error);
-                showToast("Failed to generate background.", "error");
-            } finally {
-                showLoading(false);
+                btnRemoveBg.disabled = false;
             }
         }
 
         // ==========================================
-        // LOCAL IMAGE PROCESSING & UTILS
+        // CANVAS / DISPLAY LOGIC
         // ==========================================
-
-        // Removes solid green pixels from the AI output to create true transparency
-        function applyChromaKeyExtraction(dataUrl, originalW, originalH) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => {
-                    // Match dimensions back to original
-                    processedCanvas.width = originalW;
-                    processedCanvas.height = originalH;
-                    const ctx = processedCanvas.getContext('2d');
-                    
-                    // Draw the AI result stretched back to original aspect ratio
-                    ctx.drawImage(img, 0, 0, originalW, originalH);
-                    
-                    try {
-                        const imgData = ctx.getImageData(0, 0, originalW, originalH);
-                        const data = imgData.data;
-                        
-                        // Strict Chroma Key extraction for Pure Green
-                        for (let i = 0; i < data.length; i += 4) {
-                            const r = data[i];
-                            const g = data[i+1];
-                            const b = data[i+2];
-                            
-                            // Detection criteria for the AI generated green screen
-                            if (g > 140 && r < 120 && b < 120) {
-                                data[i+3] = 0; // Make pixel fully transparent
-                            } else if (g > 100 && r < 90 && b < 90) {
-                                // Anti-aliasing / edge feathering (make semi-transparent)
-                                data[i+3] = data[i+3] * 0.5;
-                            }
-                        }
-                        
-                        ctx.putImageData(imgData, 0, 0);
-                        currentBgType = 'transparent'; // Reset backdrop mode
-                        updateCompositedView();
-                        resolve();
-                    } catch(err) {
-                        reject(err);
-                    }
-                };
-                img.onerror = reject;
-                img.src = dataUrl;
-            });
-        }
-
-        // Merges Background Settings with the Foreground Subject Canvas
         function updateCompositedView() {
-            if(!originalImgData) return;
-            
+            if (!originalImgData) return;
             const w = originalImgData.naturalWidth;
             const h = originalImgData.naturalHeight;
-            
             finalCanvas = document.createElement('canvas');
             finalCanvas.width = w;
             finalCanvas.height = h;
             const ctx = finalCanvas.getContext('2d');
-            
-            // 1. Draw Background Layer
+
             if (currentBgType === 'color') {
                 ctx.fillStyle = currentBgColor;
                 ctx.fillRect(0, 0, w, h);
-            } else if (currentBgType === 'image' && currentBgImage) {
-                // Scale generated background to cover the canvas
-                ctx.drawImage(currentBgImage, 0, 0, w, h);
             }
-            
-            // 2. Draw Subject Foreground Layer
-            if (processedCanvas) {
-                ctx.drawImage(processedCanvas, 0, 0);
-            }
-            
-            // Output to the slider UI
+
+            if (processedCanvas) ctx.drawImage(processedCanvas, 0, 0);
             imgProcessed.src = finalCanvas.toDataURL('image/png', 1.0);
         }
 
         function applySolidBg(color) {
-            if(!processedCanvas) return;
+            if (!processedCanvas) return;
             if (color === 'transparent') {
                 currentBgType = 'transparent';
             } else {
@@ -684,23 +501,24 @@
         }
 
         function downloadImage() {
-            if(!finalCanvas) return;
-            
+            if (!finalCanvas) return;
             const link = document.createElement('a');
-            link.download = `ZenithCut_Transparent_${Date.now()}.png`;
-            link.href = finalCanvas.toDataURL('image/png', 1.0); // Highest quality PNG
+            link.download = `ZenithCut_${Date.now()}.png`;
+            link.href = finalCanvas.toDataURL('image/png', 1.0);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            
             showToast("HD Image download started!", "success");
         }
 
-        // Helper UI updaters
-        function showLoading(show, text="") {
-            if(show) {
+        // ==========================================
+        // UI HELPERS
+        // ==========================================
+        function showLoading(show, text = "", subtext = "") {
+            if (show) {
                 loadingOverlay.classList.remove('hidden');
                 loadingText.innerText = text;
+                loadingSubtext.innerText = subtext;
             } else {
                 loadingOverlay.classList.add('hidden');
             }
@@ -717,35 +535,23 @@
             fileInput.value = '';
             originalImgData = null;
             processedCanvas = null;
+            finalCanvas = null;
             currentBgType = 'transparent';
-            currentBgImage = null;
-            
             btnRemoveBg.disabled = true;
-            btnGenBg.disabled = true;
             btnDownload.disabled = true;
-            
-            // Reset slider position
             sliderHandle.style.left = '50%';
             sliderWrap.style.clipPath = 'inset(0 50% 0 0)';
-            
             updateStatus(`<i class="fa-solid fa-circle-check text-emerald-400"></i> System Ready`, "Select an image to open ZenithCut's creative editing toolkit.");
         }
 
-        // Interactive Before/After Split Slider Logic
+        // Slider Logic
         let isDragging = false;
         sliderContainer.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e); });
         window.addEventListener('mouseup', () => isDragging = false);
-        window.addEventListener('mousemove', (e) => {
-            if(!isDragging) return;
-            updateSlider(e);
-        });
-        
+        window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e); });
         sliderContainer.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0]); });
         window.addEventListener('touchend', () => isDragging = false);
-        window.addEventListener('touchmove', (e) => {
-            if(!isDragging) return;
-            updateSlider(e.touches[0]);
-        });
+        window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0]); });
 
         function updateSlider(e) {
             const rect = sliderContainer.getBoundingClientRect();
@@ -755,33 +561,23 @@
             sliderWrap.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
         }
 
-        // Custom Toast Notifications Factory
+        // Toast
         function showToast(message, type = "info") {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            
             const styles = {
                 success: "bg-emerald-500/10 border-emerald-500/50 text-emerald-400",
                 error: "bg-red-500/10 border-red-500/50 text-red-400",
                 info: "bg-brand-500/10 border-brand-500/50 text-brand-300",
                 warning: "bg-yellow-500/10 border-yellow-500/50 text-yellow-400"
             };
-            
             const icons = {
                 success: "fa-check-circle", error: "fa-xmark-circle", info: "fa-info-circle", warning: "fa-triangle-exclamation"
             };
-
-            toast.className = `p-4 rounded-xl border backdrop-blur-md ${styles[type]} shadow-xl flex items-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0`;
+            toast.className = `p-4 rounded-xl border backdrop-blur-md ${styles[type]} shadow-xl flex items-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-auto`;
             toast.innerHTML = `<i class="fa-solid ${icons[type]} text-lg"></i><span class="font-medium text-sm">${message}</span>`;
-            
             container.appendChild(toast);
-            
-            // Trigger entry animation
-            requestAnimationFrame(() => {
-                toast.classList.remove('translate-y-4', 'opacity-0');
-            });
-            
-            // Trigger exit animation
+            requestAnimationFrame(() => toast.classList.remove('translate-y-4', 'opacity-0'));
             setTimeout(() => {
                 toast.classList.add('translate-y-4', 'opacity-0');
                 setTimeout(() => toast.remove(), 300);
