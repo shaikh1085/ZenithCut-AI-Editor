@@ -1,5 +1,6 @@
+const https = require('https');
+
 export default async function handler(req, res) {
-    // CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -7,44 +8,66 @@ export default async function handler(req, res) {
     if (req.method === 'OPTIONS') return res.status(200).end();
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
+    const HF_KEY = process.env.HUGGINGFACE_API_KEY;
+    if (!HF_KEY) return res.status(500).json({ error: 'API key not configured' });
+
     try {
         const { imageBase64 } = req.body;
         if (!imageBase64) return res.status(400).json({ error: 'No image provided' });
 
         const imageBuffer = Buffer.from(imageBase64, 'base64');
 
-        const HF_KEY = process.env.HUGGINGFACE_API_KEY;
-        if (!HF_KEY) return res.status(500).json({ error: 'API key not configured' });
-
-        // Call Hugging Face RMBG-1.4 model
-        const response = await fetch(
-            'https://api-inference.huggingface.co/models/briaai/RMBG-1.4',
-            {
+        // Use node-fetch compatible approach
+        const result = await new Promise((resolve, reject) => {
+            const options = {
+                hostname: 'api-inference.huggingface.co',
+                path: '/models/briaai/RMBG-1.4',
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${HF_KEY}`,
                     'Content-Type': 'application/octet-stream',
-                },
-                body: imageBuffer,
-            }
-        );
+                    'Content-Length': imageBuffer.length,
+                    'x-wait-for-model': 'true',
+                }
+            };
 
-        if (!response.ok) {
-            const errText = await response.text();
-            // Model loading (cold start) — tell frontend to retry
-            if (response.status === 503) {
-                return res.status(503).json({ error: 'Model is loading, please retry in 20 seconds', retry: true });
-            }
-            throw new Error(`HuggingFace error ${response.status}: ${errText}`);
+            const chunks = [];
+            const request = https.request(options, (response) => {
+                response.on('data', (chunk) => chunks.push(chunk));
+                response.on('end', () => {
+                    resolve({
+                        status: response.statusCode,
+                        headers: response.headers,
+                        body: Buffer.concat(chunks)
+                    });
+                });
+            });
+
+            request.on('error', reject);
+            request.write(imageBuffer);
+            request.end();
+        });
+
+        console.log('HF Status:', result.status);
+        console.log('HF Content-Type:', result.headers['content-type']);
+
+        if (result.status !== 200) {
+            const errText = result.body.toString();
+            console.log('HF Error body:', errText.substring(0, 300));
+            return res.status(result.status).json({
+                error: `HuggingFace error ${result.status}`,
+                details: errText.substring(0, 300),
+                retry: result.status === 503
+            });
         }
 
-        const resultBuffer = await response.arrayBuffer();
-        const base64Result = Buffer.from(resultBuffer).toString('base64');
-
-        return res.status(200).json({ image: `data:image/png;base64,${base64Result}` });
+        const base64Result = result.body.toString('base64');
+        return res.status(200).json({
+            image: `data:image/png;base64,${base64Result}`
+        });
 
     } catch (error) {
-        console.error('Remove BG Error:', error);
+        console.error('Handler error:', error.message);
         return res.status(500).json({ error: error.message });
     }
 }
