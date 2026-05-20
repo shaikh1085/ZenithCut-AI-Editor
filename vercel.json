@@ -1,7 +1,3 @@
 {
-  "cleanUrls": true,
-  "regions": ["iad1"],
-  "rewrites": [
-    { "source": "/api/remove-background", "destination": "/api/remove-background.js" }
-  ]
+  "cleanUrls": true
 }
