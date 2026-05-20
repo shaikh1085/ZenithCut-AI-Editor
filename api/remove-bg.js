@@ -7,15 +7,21 @@ export default async function handler(req, res) {
     try {
         const { imageBase64 } = req.body;
         
-        // Sabse simple version, koi timeout ya complex settings nahi
+        // 15 seconds ka timeout force kar rahe hain taake 5ms mein crash na ho
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
+
         const response = await fetch('https://api-inference.huggingface.co/models/briaai/RMBG-1.4', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${HF_KEY}`,
                 'Content-Type': 'application/octet-stream'
             },
-            body: Buffer.from(imageBase64, 'base64')
+            body: Buffer.from(imageBase64, 'base64'),
+            signal: controller.signal
         });
+
+        clearTimeout(timeoutId);
 
         if (!response.ok) {
             const errorText = await response.text();
